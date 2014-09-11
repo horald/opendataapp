@@ -95,9 +95,12 @@ if (isset($_REQUEST['step'])) {
         $sql = "CREATE Database ".$_SESSION['dbname'];
         $retval = mysql_query( $sql, $conn ) or die('Could not create database: ' . mysql_error());
       } else {
-        $conn = pg_connect("host=".$_SESSION['dbhost']." user=".$_SESSION['dbuser']." password=".$_SESSION['dbpass']) or die('Could not connect: ' . pg_last_error());
-        $sql = "CREATE Database ".$_SESSION['dbname'];
-        $retval = pg_query( $sql, $conn ) or die('Could not create database: ' . pg_last_error());
+        $connstr="host=".$_SESSION['dbhost']." dbname=postgres user=".$_SESSION['dbuser']." password=".$_SESSION['dbpass'];
+//echo $connstr."<br>";
+        $conn = pg_connect($connstr) or die('Could not connect: ' . pg_last_error());
+        $sql = "create database ".$_SESSION['dbname'];
+//echo $sql."<br>";
+        $retval = pg_query( $conn, $sql ) or die('Could not create database: ' . pg_last_error());
       }
       echo "<br>Database ".$_SESSION['dbname']." created successfully.<br>";      
       
@@ -112,7 +115,11 @@ if (isset($_REQUEST['step'])) {
       } else {
         pg_connect("host=".$_SESSION['dbhost']." user=".$_SESSION['dbuser']." password=".$_SESSION['dbpass']." dbname=".$_SESSION['dbname']);
       }
-      $lines = file('install.sql');
+      if ($_SESSION['dbtyp']=="mysql") {
+        $lines = file('install-mysql.sql');
+      } else {
+        $lines = file('install-postgre.sql');
+      }
       $newquery="";
       $remark='false';
       $cntlin=0;
@@ -151,7 +158,7 @@ if (isset($_REQUEST['step'])) {
     case "final":
       session_destroy();
       echo "Installation completed.<br>";
-      echo "<a href='index.php'>Finished</>";
+      echo "<a href='../index.php'>Finished</>";
     break;
   }
 } else {

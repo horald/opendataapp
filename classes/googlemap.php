@@ -101,12 +101,16 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
      //echo $count."=count<br>";
-     $query = db_query("SELECT * FROM ".$pararray['dbtable']," SELECT-Error",$gdbtyp);
+     $query="SELECT * FROM ".$pararray['dbtable'];
+     //echo $query."<br>";
+     $qryres = db_query($query," SELECT-Error",$gdbtyp);
      $ds="";
      for ( $x = 0; $x < $count; $x++ ) {
-//     while ($row = db_fetch($query,$gdbtyp)){
-        $query = db_query("SELECT * FROM ".$pararray['dbtable']." WHERE fldindex=".$dbselarr[$x]," SELECT-Error",$gdbtyp);
-        $row = db_fetch($query,$gdbtyp);
+//     while ($row = db_fetch($qryres,$gdbtyp)){
+        $arrquery="SELECT * FROM ".$pararray['dbtable']." WHERE fldindex=".$dbselarr[$x];
+        //echo $arrquery."<br>";
+        $qryarr = db_query($arrquery," SELECT-Error",$gdbtyp);
+        $row = db_fetch($qryarr,$gdbtyp);
         $name=$row['fldname'];
         $ds=$ds.$row['fldxkoor'].",".$row['fldykoor'].",".$row['fldlink'].",".$name.";";
      }	

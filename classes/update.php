@@ -4,6 +4,7 @@ $menuid=$_GET[menuid];
 $idwert=$_GET[idwert];
 //echo $menu."=menu,".$menuid."=menuid,".$idwert."=idwert<br>";
 include("../config.php");
+include("dbtools.php");
 include("updatefunc.php");
 include("../classes/bootstrapfunc.php");
 include("../sites/views/wp_".$menu."/showtab.inc.php");
@@ -23,12 +24,12 @@ if ($update==1) {
       updatesavedirect($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$gdbname);
       updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$menuid);
     } else {
-      updatesave($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$gdbname,$menuid);
+      updatesave($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$gdbname,$menuid,$gdbtyp);
       echo "<meta http-equiv='refresh' content='0; URL=showtab.php?menu=".$menu."&idwert=".$menuid."'>";  
     }
   }  
 } else {
-  updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$menuid,$krit);
+  updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$menuid,$krit,$gdbtyp);
 }  
 bootstrapend();
 ?>  

@@ -1,11 +1,18 @@
 <?php
+session_start();
+$menu=$_GET[menu];
 include("../config.php");
 include("dbtools.php");
+include("bootstrapfunc.php");
+include("../sites/views/wp_".$menu."/showtab.inc.php");
+//bootstraphead("NO");
+//bootstrapbegin($pararray['headline']);
+//bootstrapend();
 ?>
      <html>
      <head>
      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-     <title>Google Map Spielpl&aumltze</title>
+     <title>Google Map</title>
      <style type="text/css">
      body { font: normal 10pt Helvetica, Arial; }
      #map { width: 640px; height: 480px; border: 0px; padding: 0px; }
@@ -91,9 +98,15 @@ include("dbtools.php");
      </script>
      </head>
 <?php
-     $query = db_query("SELECT * FROM tblschulen"," SELECT-Error");
+     $dbselarr = $_SESSION['DBSELARR'];
+     $count=sizeof($dbselarr);
+     //echo $count."=count<br>";
+     $query = db_query("SELECT * FROM ".$pararray['dbtable']," SELECT-Error",$gdbtyp);
      $ds="";
-     while ($row = db_fetch($query)){
+     for ( $x = 0; $x < $count; $x++ ) {
+//     while ($row = db_fetch($query,$gdbtyp)){
+        $query = db_query("SELECT * FROM ".$pararray['dbtable']." WHERE fldindex=".$dbselarr[$x]," SELECT-Error",$gdbtyp);
+        $row = db_fetch($query,$gdbtyp);
         $name=$row['fldname'];
         $ds=$ds.$row['fldxkoor'].",".$row['fldykoor'].",".$row['fldlink'].",".$name.";";
      }	
@@ -101,5 +114,6 @@ include("dbtools.php");
      echo "<body onload='initMap(".$array.")' style='margin:0px; border:0px; padding:0px;'>";
      echo "<div id='map'></div>";
      echo "</body>";
-?>     
-     </html>
+     
+     echo "</html>";
+?>

@@ -414,18 +414,18 @@ function insertsave($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$idd
     }
 
     $query = "INSERT INTO ".$pararray['dbtable']." (".$strfld.") VALUES(".$strval.") ";
-    //echo $query."<br>";
+    echo $query."<br>";
 //    mysql_query($query) or die("Error using mysql_query($sql): ".mysql_error());
-    db_query($query," Insert-Error");
+    db_query($query," Insert-Error",$gdbtyp);
 echo $lstinsid."=lstinsid<br>";
     if ($lstinsid<>0) {
-      $insid=mysql_insert_id();
+      $insid=db_insert_id($gdbtyp);
       $qryupd = "UPDATE tbladr_lstgrp SET fldid_liste=".$insid." WHERE fldindex=".$lstinsid;      	
 //      mysql_query($qryupd) or die("Error using mysql_query($qryupd): ".mysql_error());
       db_query($qryupd,"",$gdbtyp);
       //echo $qryupd.",".$insid."=insid<br>";
     }    
-    mysql_close();
+    //mysql_close();
     echo "Die Daten wurden eingetragen<br>";
   } else {
     echo "Der Vorgang wurde abgebrochen.<br>"; 

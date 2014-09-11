@@ -28,4 +28,16 @@ function db_fetch($result,$dbtyp) {
   return $row;
 }
 
+function db_insert_id($dbtyp) {
+  switch ($dbtyp) {
+    case "mysql":
+      $row = mysql_insert_id();
+    break;
+    case "postgres":
+//      $row = pg_fetch_assoc($result);
+    break;
+  }
+  return $row;
+}
+
 ?>

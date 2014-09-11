@@ -1,12 +1,16 @@
 <?php
 header("content-type: text/html; charset=utf-8");
 
-function updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$menuid,$krit) {
+function updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$menuid,$krit,$gdbtyp) {
   include("../config.php");
 
   $query = "SELECT * FROM ".$pararray['dbtable']." WHERE ".$pararray['fldindex']."='$idwert'";
-  $result = mysql_query($query) or die("Error using mysql_query($sql): ".mysql_error());
-  $line = mysql_fetch_array($result);
+//  $result = mysql_query($query) or die("Error using mysql_query($sql): ".mysql_error());
+//  $line = mysql_fetch_array($result);
+//echo $query."<br>";
+//echo $gdbtyp."<br>";
+  $result = db_query($query,"",$gdbtyp);
+  $line = db_fetch($result,$gdbtyp);
 
   echo "<table><tr><td width='500px'>";
   echo "<form name='eingabe' class='form-horizontal' method='post' action='update.php?update=1&idwert=".$idwert."&menu=".$menu."&menuid=".$menuid."' enctype='multipart/form-data'>";
@@ -28,11 +32,13 @@ function updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$me
         } else {
           $fquery = "SELECT * FROM ".$arrelement['dbtable'].$selorder;
         }
-        $fresult = mysql_query($fquery) or die(mysql_error());
+//        $fresult = mysql_query($fquery) or die(mysql_error());
+        $fresult = db_query($fquery,"",$gdbtyp);
         echo "<div class='control-group'>";
         echo "  <label class='control-label' style='text-align:left' for='input01'>".$arrelement['label']."</label>";
         echo "  <select name='".$arrelement['name']."' size='1'>";
-        while ($fline = mysql_fetch_array($fresult)) {
+//        while ($fline = mysql_fetch_array($fresult)) {
+        while ($fline = db_fetch($fresult,$gdbtyp)) {
           $strstatus = $fline[$arrelement['seldbfield']];
           if ($wert == $strstatus) {
             echo "<option style='background-color:#c0c0c0;' selected>".$strstatus."</option>";
@@ -86,7 +92,8 @@ function updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$me
         }
         $fquery = "SELECT * FROM ".$arrelement['dbtable'].$selwhere.$selorder;
         //echo $fquery."=query<br>";
-        $fresult = mysql_query($fquery) or die(mysql_error()." ".$fquery);
+//        $fresult = mysql_query($fquery) or die(mysql_error()." ".$fquery);
+        $fresult = db_query($fquery,"",$gdbtyp);
         echo "<div class='control-group'>";
         echo "  <label class='control-label' style='text-align:left' for='input01'>".$arrelement['label']."</label>";
         if ($arrelement['selparent']=="true") { 
@@ -99,7 +106,8 @@ function updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$me
         }
           
         echo "<option style='background-color:#c0c0c0;' value=0 >(ohne)</option>";
-        while ($fline = mysql_fetch_array($fresult)) {
+//        while ($fline = mysql_fetch_array($fresult)) {
+        while ($fline = db_fetch($fresult,$gdbtyp)) {
           $strstatus = $fline[$arrelement['seldbfield']];
           $strvalue = $fline[$arrelement['seldbindex']];
           if ($strstatus!="") {
@@ -268,8 +276,10 @@ function updateinput($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$me
 
         echo "<select name='top5' size='4'>";
         $qrygrp = "SELECT gr.fldbez FROM tbladr_group AS gr, tbladr_lstgrp AS lg WHERE lg.fldid_group=gr.fldindex AND lg.fldid_liste=".$line[$pararray['fldindex']];
-        $resgrp = mysql_query($qrygrp);
-        while ($lingrp = mysql_fetch_array($resgrp)) {
+//        $resgrp = mysql_query($qrygrp);
+//        while ($lingrp = mysql_fetch_array($resgrp)) {
+        $resgrp = db_query($qrygrp,"",$gdbtyp);
+        while ($lingrp = db_fetch($resgrp,$gdbtyp)) {
           echo "<option>".$lingrp[$arrelement['seldbfield']]."</option>";
         }  
         echo "</select>";
@@ -472,8 +482,10 @@ function updatecheckconnect($pararray,$listarray,$filterarray,$filter,$idwert,$m
   echo "<a class='btn btn-primary' href='showtab.php?menu=".$menu."&idwert=".$menuid."'>zurueck</a><br>";
 //  echo "<a class='btn btn-primary' href='update.php?update=1&menu=".$menu."&idwert=".$idwert."'>Erneut testen</a><br>";
   $query="SELECT * FROM ".$pararray['dbtable']." WHERE ".$pararray['fldindex']."=".$idwert;
-  $result=mysql_query($query) or die("Error using mysql_query($query): ".mysql_error());
-  $line = mysql_fetch_array($result);
+//  $result=mysql_query($query) or die("Error using mysql_query($query): ".mysql_error());
+//  $line = mysql_fetch_array($result);
+  $result=db_query($query,"",$gdbtyp);
+  $line = db_fetch($result,$gdbtyp);
   echo "<table>";
   echo "<tr><td>host  </td><td>: ".$line['fldIPAddr']."</td></tr>";
   echo "<tr><td>dbname</td><td>: ".$line['flddbname']."</td></tr>";
@@ -514,7 +526,7 @@ function updatecheckconnect1($pararray,$listarray,$filterarray,$filter,$idwert,$
 
 }
 
-function updatesavedirect($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$dbname) {
+function updatesavedirect($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$dbname,$gdbtyp) {
 
   if (isset($_REQUEST['submit'])) { 
     $strset="";
@@ -531,8 +543,10 @@ function updatesavedirect($pararray,$listarray,$filterarray,$filter,$idwert,$men
         	  $dbwhere=$_POST[$arrelement['dbwherename']];
             $qrypos = "SELECT max(".$arrelement['dbfield'].") AS maxwert FROM ".$pararray['dbtable']." WHERE ".$arrelement['dbwherefield']."='".$dbwhere."'";
             //echo $qrypos."=qrypos<br>"; 
-            $respos=mysql_query($qrypos) or die("Error using mysql_query($qrypos): ".mysql_error());
-            $reslin = mysql_fetch_array($respos);
+//            $respos=mysql_query($qrypos) or die("Error using mysql_query($qrypos): ".mysql_error());
+//            $reslin = mysql_fetch_array($respos);
+            $respos=db_query($qrypos,"",$gdbtyp);
+            $reslin = db_fetch($respos,$gdbtyp);
             $wert=$reslin['maxwert']+1;
           }  
         }
@@ -564,18 +578,21 @@ function updatesavedirect($pararray,$listarray,$filterarray,$filter,$idwert,$men
 
     $query = "UPDATE ".$pararray['dbtable']." SET ".$strset." WHERE ".$pararray['fldindex']."='$idwert'";
     //echo $query."<br>";
-    mysql_query($query) or die("Error using mysql_query($sql): ".mysql_error());
+//    mysql_query($query) or die("Error using mysql_query($sql): ".mysql_error());
+    db_query($query,"",$gdbtyp);
     $resync=$_POST['resync'];
     if ($resync==true) {
       $qrysync="INSERT INTO tbldbsync (flddbname, fldtblname, fldtblindex, fldstatus, flddbsync) VALUES ('".$dbname."','".$pararray['dbtable']."','".$idwert."','INS','NEW')";
       //echo $qrysync."<br>";
-      mysql_query($qrysync) or die("Error using mysql_query($sql): ".mysql_error());
+//      mysql_query($qrysync) or die("Error using mysql_query($sql): ".mysql_error());
+      db_query($qrysync,"",$gdbtyp);
     }
     $dscopy=$_POST['dscopy'];
     if ($dscopy==true) {
       $qrycopy = "INSERT INTO ".$pararray['dbtable']." (".$strfld.") VALUES(".$strval.") ";
       //echo $qrysync."<br>";
-      mysql_query($qrycopy) or die("Error using mysql_query($qrycopy): ".mysql_error());
+//      mysql_query($qrycopy) or die("Error using mysql_query($qrycopy): ".mysql_error());
+      db_query($qrycopy,"",$gdbtyp);
     }
     echo "Die Daten wurden eingetragen<br>";
   } else {
@@ -584,11 +601,11 @@ function updatesavedirect($pararray,$listarray,$filterarray,$filter,$idwert,$men
 
 }
 
-function updatesave($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$dbname,$menuid) {
+function updatesave($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$dbname,$menuid,$gdbtyp) {
 
   echo "<a class='btn btn-primary' href='showtab.php?menu=".$menu."&idwert=".$menuid."'>zurueck</a><br>";
   if (isset($_REQUEST['submit'])) { 
-    updatesavedirect($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$dbname);
+    updatesavedirect($pararray,$listarray,$filterarray,$filter,$idwert,$menu,$dbname,$gdbtyp);
   } else {
     echo "<div class='alert alert-warning'>";
     echo "Der Vorgang wurde abgebrochen.<br>"; 

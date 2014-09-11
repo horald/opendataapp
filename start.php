@@ -37,7 +37,7 @@ function startmenu_mobil() {
 }	
 
 function startinstall() {
-  echo "<form name='eingabe' method='post' action='install.php'>";
+  echo "<form name='eingabe' method='post' action='installation/install.php'>";
   echo "<table>";
   echo "<tr><td><h2>Installation</h2></td></tr>";
   echo "<tr>";

@@ -751,6 +751,7 @@ if ($drucken=="N") {
 
   if (isset($idwert)) { 
     if ($idwert<>"") {
+      if ($readonly<>"true") {
       $qryfunc = "SELECT * FROM tblfunc WHERE (fldtyp='MENU' OR fldtyp='REPORT') AND fldmenuid=".$idwert;
       //echo $qryfunc."<br>"; 
 //      $resfunc = mysql_query($qryfunc) or die(mysql_error()." sql006b:".$qryfunc);
@@ -784,6 +785,7 @@ if ($drucken=="N") {
               echo "<a class='btn btn-primary' href='".$linfunc['fldphp']."?menu=".$menu."&idwert=".$idwert.$param."&menuid=".$idwert."'>".$bez."</a> ";
             }  
           }        
+        }
         }
       }    
     }

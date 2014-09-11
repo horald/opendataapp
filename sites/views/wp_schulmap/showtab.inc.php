@@ -6,8 +6,8 @@ $listarray = array ( array ( 'label' => 'Bezeichnung',
                              'dbfield' => 'fldbez' ));
 
 
-$pararray = array ( 'headline' => 'Schulbezirk',
-                    'dbtable'  => 'tblschulbezirk',
+$pararray = array ( 'headline' => 'Schulmap',
+                    'dbtable'  => 'tblschulen',
                     'orderby'  => '',
                     'strwhere' => '',
                     'fldindex' => 'fldindex');

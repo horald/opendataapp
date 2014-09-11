@@ -47,7 +47,7 @@ if (isset($_REQUEST['step'])) {
       echo "</select>";
       echo "</td></tr>";
       echo "<tr><td>Host:</td><td><input type=text size=12 name=dbhost value='localhost'></td></tr>";
-      echo "<tr><td>Database:</td><td><input type=text size=12 name=dbname value='dbspielplatzapp'></td></tr>";
+      echo "<tr><td>Database:</td><td><input type=text size=12 name=dbname value='dbopendataapp'></td></tr>";
       echo "<tr><td>User:</td><td><input type=text size=12 name=dbuser value='root'></td></tr>";
       echo "<tr><td>Password:</td><td><input type=password size=12 name=dbpass></td></tr>";
       echo "<tr><td align=right>";
@@ -67,7 +67,7 @@ if (isset($_REQUEST['step'])) {
         $conf = $conf."\$res = mysql_connect(\$dbhost,\$dbuser,\$dbpass) or die(mysql_error());\r\n";
         $conf = $conf."\$res = mysql_select_db(\$dbname) or die(mysql_error());\r\n";
       } else {
-        $conf = $conf."\$res = pg_connect(host=$dbhost user=$dbuser password=$dbpass) or die(pg_last_error());\r\n";
+        $conf = $conf."\$res = pg_connect(host=$dbhost user=$dbuser password=$dbpass dbname=$dbname) or die(pg_last_error());\r\n";
       } 
 
       $content = "<?php\r\n";
@@ -90,9 +90,15 @@ if (isset($_REQUEST['step'])) {
       }
 
       
-      $conn = mysql_connect($_SESSION['dbhost'], $_SESSION['dbuser'], $_SESSION['dbpass']) or die('Could not connect: ' . mysql_error());
-      $sql = "CREATE Database ".$_SESSION['dbname'];
-      $retval = mysql_query( $sql, $conn ) or die('Could not create database: ' . mysql_error());
+      if ($_SESSION['dbtyp']=="mysql") {
+        $conn = mysql_connect($_SESSION['dbhost'], $_SESSION['dbuser'], $_SESSION['dbpass']) or die('Could not connect: ' . mysql_error());
+        $sql = "CREATE Database ".$_SESSION['dbname'];
+        $retval = mysql_query( $sql, $conn ) or die('Could not create database: ' . mysql_error());
+      } else {
+        $conn = pg_connect("host=".$_SESSION['dbhost']." user=".$_SESSION['dbuser']." password=".$_SESSION['dbpass']) or die('Could not connect: ' . pg_last_error());
+        $sql = "CREATE Database ".$_SESSION['dbname'];
+        $retval = pg_query( $sql, $conn ) or die('Could not create database: ' . pg_last_error());
+      }
       echo "<br>Database ".$_SESSION['dbname']." created successfully.<br>";      
       
       echo "</td></tr><tr><td align=right>";
@@ -100,8 +106,12 @@ if (isset($_REQUEST['step'])) {
     break;
     case 3:
       echo "dbhost:".$_SESSION['dbhost']."<br>";
-      mysql_connect($_SESSION['dbhost'],$_SESSION['dbuser'],$_SESSION['dbpass']);
-      mysql_select_db($_SESSION['dbname']);
+      if ($_SESSION['dbtyp']=="mysql") {
+        mysql_connect($_SESSION['dbhost'],$_SESSION['dbuser'],$_SESSION['dbpass']);
+        mysql_select_db($_SESSION['dbname']);
+      } else {
+        pg_connect("host=".$_SESSION['dbhost']." user=".$_SESSION['dbuser']." password=".$_SESSION['dbpass']." dbname=".$_SESSION['dbname']);
+      }
       $lines = file('install.sql');
       $newquery="";
       $remark='false';
@@ -116,7 +126,11 @@ if (isset($_REQUEST['step'])) {
              //echo $query."<br>";
              if (substr(trim($query),-1)==";") {
                //echo "query:".$newquery."<br>";
-               $result = @mysql_query($newquery) or die(mysql_error().",cntlin=".$cntlin);
+               if ($_SESSION['dbtyp']=="mysql") {
+                 $result = @mysql_query($newquery) or die(mysql_error().",cntlin=".$cntlin);
+               } else {
+                 $result = @pg_query($newquery) or die(pg_last_error().",cntlin=".$cntlin);
+               }
                $newquery=""; 
              }
            }   

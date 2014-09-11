@@ -1,0 +1,4 @@
+Version 1.003:
+- Die Datenbankabfragen wurden so angepasst dass diese je nach einstellung in der config.php 
+  mit mysql oder postgres abgefragt werden.
+- Je nach selektion der Schulen werden auch nur diese angezeigt.

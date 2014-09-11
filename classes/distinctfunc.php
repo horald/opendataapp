@@ -20,16 +20,19 @@ function distinctauswahl($menu,$idwert) {
   echo "</form>";
 }
 
-function distinctausfuehren($table,$feld) {
+function distinctausfuehren($table,$feld,$gdbtyp) {
   $qrydis = "SELECT DISTINCT ".$feld." FROM tblschulen";
   //echo $qrydis."<br>";
-  $resdis = mysql_query($qrydis) or die(mysql_error());
-  while ($lindis = mysql_fetch_array($resdis)) { 
+//  $resdis = mysql_query($qrydis) or die(mysql_error());
+//  while ($lindis = mysql_fetch_array($resdis)) { 
+  $resdis = db_query($qrydis,"",$gdbtyp);
+  while ($lindis = db_fetch($resdis,$gdbtyp)) { 
     $qryins="INSERT INTO ".$table." (fldbez) VALUES ('".$lindis[$feld]."')";
     echo "<div class='alert alert-info'>";
     echo $qryins;
     echo "</div>";
-    $resins = mysql_query($qryins) or die(mysql_error());
+//    $resins = mysql_query($qryins) or die(mysql_error());
+    $resins = db_query($qryins,"",$gdbtyp);
   }  
 }
 

@@ -84,7 +84,7 @@ $filterarray = array ( array ( 'label' => 'Schultyp:',
                                'width' => 10, 
                                'type' => 'select',
                                'sign' => '=',
-                               'dbtable' => 'tblschulbezirk',
+                               'dbtable' => 'tblstadtbezirk',
                                'seldbfield' => 'fldbez',
                                'dbfield' => 'fldstadtbezirk' ));
 

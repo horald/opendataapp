@@ -17,9 +17,22 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      echo "<script src='http://maps.google.com/maps/api/js?v=3&sensor=false' type='text/javascript'></script>";
      echo "<script type='text/javascript'>";
 
+     echo "var blue_icon = new google.maps.MarkerImage('http://maps.google.com/mapfiles/ms/micons/blue.png',";
+     echo "        new google.maps.Size(32, 32), new google.maps.Point(0, 0),";
+     echo "        new google.maps.Point(16, 32)";
+     echo ");";
+     echo "var red_icon = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_red.png',";
+     echo "        new google.maps.Size(32, 32), new google.maps.Point(0, 0),";
+     echo "        new google.maps.Point(16, 32)";
+     echo ");";
+     echo "var center = null;";
+     echo "var map = null;";
+     echo "var currentPopup;";
+     echo "var bounds = new google.maps.LatLngBounds();";
+
      echo "</script>";
      echo "</head>";
-echo "==>1b<br>";
+echo "==>1c<br>";
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
      //echo $count."=count<br>";

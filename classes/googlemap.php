@@ -76,7 +76,7 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
              map = new google.maps.Map(document.getElementById("map"), {
 <?php
                      $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
-                     echo $query."<br>";
+                     //echo $query."<br>";
                      $qryres = db_query($query," SELECT-Error",$gdbtyp);
                      $row = db_fetch($qryres,$gdbtyp);
 
@@ -110,9 +110,9 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 <?php
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
-     //echo $count."=count<br>";
+     echo $count."=count<br>";
      $query="SELECT * FROM ".$pararray['dbtable'];
-     //echo $query."<br>";
+     echo $query."<br>";
      $qryres = db_query($query," SELECT-Error",$gdbtyp);
      $ds="";
      for ( $x = 0; $x < $count; $x++ ) {

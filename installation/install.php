@@ -4,7 +4,9 @@ $sprache = isset($_POST['sprache']) ? $_POST['sprache'] : 'english';
 
 include "../language/lang_".$sprache.".php";
 
+
 function db_connect() {
+//echo "";
 	//$conn = mysql_connect($_SESSION['dbhost'], $_SESSION['dbuser'], $_SESSION['dbpass']);
         $conn = pg_connect("host=".$_SESSION['dbhost']." dbname=".$_SESSION['dbname']." user=".$_SESSION['dbuser']." password=".$_SESSION['dbpass']) or die(pg_last_error());
 	return $conn;

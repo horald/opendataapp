@@ -1,5 +1,6 @@
 <?php
 $menu=$_GET[menu];
+$idwert=$_GET[idwert];
 include("../config.php");
 include("showtabfunc.php");
 include("delselfunc.php");
@@ -14,6 +15,7 @@ if ($deletesel==1) {
   //deleteexec($pararray,$listarray,$filterarray,$filter,$idwert,$menu);
   //echo "<meta http-equiv='refresh' content='0; URL=showtab.php?menu=".$menu."'>";  
 } else {
+  echo "<a class='btn btn-primary' href='showtab.php?menu=".$menu."&idwert=".$idwert."'>zur&uumlck</a><br>";
   $remotehost = "";
   if (isset($_GET['cloud'])) { 
     $remotehost = $_GET['cloud'];

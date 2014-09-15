@@ -1,0 +1,9 @@
+*** Opendataapp ***
+
+this is a webapp for all datas importing and showing with mysql or postgreSQL.
+You need also php and apache.
+
+--- Installation ---
+at the first start it will install automatically. If the config file config.php does
+not exist the install routine will start. Only following the instructions.
+

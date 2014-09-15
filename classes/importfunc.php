@@ -70,9 +70,11 @@ $verz = dir ( $pfad );
         }
         echo "</select>";
 
-echo " <input type='checkbox' name='zeroignore' value='1'> Nullwerte ignorieren.<br>";echo "<table class='table table-hover'>";
+echo " <input type='checkbox' name='zeroignore' value='1'> Nullwerte ignorieren.<br>";
+echo "<table class='table table-hover'>";
 echo "<thead>";
-echo "<th width='5'><input type='checkbox' name='cbuttonAll' value='1'></th>";echo "<th>Datei</th>";
+echo "<th width='5'><input type='checkbox' name='cbuttonAll' value='1'></th>";
+echo "<th>Datei</th>";
 echo "</thead>";  
 $count = 0;
 while ( $entry = $verz->read () )
@@ -172,6 +174,54 @@ function importxmlfile($importarray,$datei,$importpfad,$konto,$monat) {
     }
   }
         
+}
+
+function importtxtfile($importarray,$datei,$importpfad,$gdbtyp) {
+  $pfad = $importpfad;
+  $lines = file( $pfad.$datei);
+  $count=0;
+  $sqlstruc="INSERT INTO ".$importarray['dbtable']." (";
+  $sqlimp="SELECT * FROM tblimport WHERE flddbtable='".$importarray['dbtable']."' ORDER BY fldspalte";
+//echo $sqlimp."<br>";
+  $fresult = db_query($sqlimp,"",$gdbtyp);
+  while ($fline = mysql_fetch_array($fresult)) {
+    $sqlstruc=$sqlstruc.$fline['fldfieldname'].",";
+  }
+  $len=strlen($sqlstruc);
+  $sqlstruc=substr($sqlstruc,0,$len-1).") VALUES ("; 
+  foreach ($lines as $line_num => $textline) {
+    //echo ">".$sql."=sql<br>";
+    $count=$count+1;
+    $textline=trim($textline);
+    //var_dump($textline);
+    $array = explode ( ',', $textline );
+    //echo count($array)."=count<br>";
+    $sqlins="";
+    for ( $x = 0; $x < count ( $array ); $x++ )
+    {
+       $sqlimp="SELECT * FROM tblimport WHERE flddbtable='".$importarray['dbtable']."' AND fldspalte=".$x;
+       //echo $sqlimp."<br>";
+       $fresult = db_query($sqlimp,"",$gdbtyp);
+       if ($fline = db_fetch($fresult,$gdbtyp)) {
+         if ($fline['fldutf8']=="decode") {
+           $sqlins=$sqlins."'".utf8_decode(ltrim($array[$x]))."',";
+         } else {
+           $sqlins=$sqlins."'".$array[$x]."',";
+         }
+         //echo $fline['fldfieldname']."=field,".$array[$x]."<br>";
+       }
+    } 
+    $len=strlen($sqlins);
+    $sqlins=$sqlstruc.substr($sqlins,0,$len-2)."')"; 
+    $resins = db_query($sqlins,"",$gdbtyp);
+    echo "<div class='alert alert-success'>";
+    echo $sqlins."<br>";
+    echo "</div>";
+    //echo "------------------------<br>";
+  }
+  echo "<div class='alert alert-success'>";
+  echo $count." Daten werden importiert.";
+  echo "</div>";
 }
 
 function importcsvfile($importarray,$datei,$importpfad,$konto,$monat,$jahr) {
@@ -341,7 +391,7 @@ function importkskfile($importarray,$datei,$konto,$headerline,$zeroignore,$impor
   }
 }
 
-function importfunc($importpfad) {
+function importfunc($importpfad,$pararray,$gdbtyp) {
   $zeroignore = $_POST['zeroignore'];
   $count = $_POST['count'];
   $ktotyp = $_POST['ktotyp'];
@@ -349,13 +399,19 @@ function importfunc($importpfad) {
   $monat = $_POST['monat'];
   $jahr = $_POST['jahr'];
   $query = "SELECT * FROM tblktotyp WHERE fldIndex=".$ktotyp;
-  $result = mysql_query($query) or die(mysql_error());
-  $line = mysql_fetch_array($result);
+//  $result = mysql_query($query) or die(mysql_error());
+//  $line = mysql_fetch_array($result);
+  $result = db_query($query,"",$gdbtyp);
+  $line = db_fetch($result,$gdbtyp);
   $ktotyp = $line[fldTyp];
-  $query = "SELECT * FROM tblktobanken WHERE fldIndex=".$konto;
-  $result = mysql_query($query) or die(mysql_error());
-  $line = mysql_fetch_array($result);
-  $konto = $line[fldBez];
+  if ($konto<>"") {
+    $query = "SELECT * FROM tblktobanken WHERE fldIndex=".$konto;
+    //  $result = mysql_query($query) or die(mysql_error());
+    //  $line = mysql_fetch_array($result);
+    $result = db_query($query,"",$gdbtyp);
+    $line = db_fetch($result,$gdbtyp);
+    $konto = $line[fldBez];
+  } 
   //echo $count."=import... ".$ktotyp.",".$konto."<br>";
   $cnt=0;
   if ($count>0) {
@@ -366,7 +422,9 @@ function importfunc($importpfad) {
 	     $cnt=$cnt+1;
         $datei = $_POST['idwert'.$zaehl];
         $jahr = $_POST['jahr'];  
-        echo $datei."<br>";
+        echo "<div class='alert alert-info'>";
+        echo "Datei:".$datei;
+        echo "</div>";
         if ($ktotyp=="KSK-IMPORT") {
           $importarray = array ( array ( 'number' => 3,
                                          'dbfield' => 'fldDatum' ),
@@ -392,6 +450,10 @@ function importfunc($importpfad) {
         }
         if ($ktotyp=="CSV-IMPORT") {
           importcsvfile($importarray,$datei,$importpfad,$konto,$monat,$jahr);
+        }
+        if ($ktotyp=="TXT-IMPORT") {
+          $importarray = array ( 'dbtable' => $pararray['dbtable']);
+          importtxtfile($importarray,$datei,$importpfad,$gdbtyp);
         }
         if ($ktotyp=="XML-IMPORT") {
           importxmlfile($importarray,$datei,$importpfad,$konto,$monat);

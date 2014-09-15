@@ -2,6 +2,7 @@
 $menu=$_GET[menu];
 $menuid=$_GET[menuid];
 include("../config.php");
+include("dbtools.php");
 include("importfunc.php");
 include("bootstrapfunc.php");
 include("../sites/views/wp_".$menu."/showtab.inc.php");
@@ -15,7 +16,7 @@ if ($import==2) {
 } else {
   if ($import==1) {
     if (isset($_REQUEST['submit'])) { 
-      importfunc($importpfad);
+      importfunc($importpfad,$pararray,$gdbtyp);
     } else {
       echo "Der Vorgang wurde abgebrochen.<br>"; 
       echo "<meta http-equiv='refresh' content='0; URL=showtab.php?menu=".$menu."&idwert=".$menuid."'>";

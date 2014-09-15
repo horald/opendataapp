@@ -1,0 +1,2 @@
+Version 1.004:
+- Über die Tabelle Orte kann jetzt der Startort für die Google-Map festgelegt werden.

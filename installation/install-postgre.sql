@@ -10,7 +10,7 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- Name: tblfilter; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblfilter; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblfilter (
@@ -22,10 +22,10 @@ CREATE TABLE tblfilter (
 );
 
 
-ALTER TABLE public.tblfilter OWNER TO root;
+ALTER TABLE public.tblfilter OWNER TO spielplatzapp;
 
 --
--- Name: tblfilter_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblfilter_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblfilter_fldindex_seq
@@ -36,17 +36,17 @@ CREATE SEQUENCE tblfilter_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblfilter_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblfilter_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblfilter_fldindex_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+-- Name: tblfilter_fldindex_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spielplatzapp
 --
 
 ALTER SEQUENCE tblfilter_fldindex_seq OWNED BY tblfilter.fldindex;
 
 
 --
--- Name: tblfunc_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblfunc_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblfunc_fldindex_seq
@@ -57,10 +57,10 @@ CREATE SEQUENCE tblfunc_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblfunc_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblfunc_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblfunc; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblfunc; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblfunc (
@@ -79,10 +79,10 @@ CREATE TABLE tblfunc (
 );
 
 
-ALTER TABLE public.tblfunc OWNER TO root;
+ALTER TABLE public.tblfunc OWNER TO spielplatzapp;
 
 --
--- Name: tblktobanken; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblktobanken; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblktobanken (
@@ -94,10 +94,10 @@ CREATE TABLE tblktobanken (
 );
 
 
-ALTER TABLE public.tblktobanken OWNER TO root;
+ALTER TABLE public.tblktobanken OWNER TO spielplatzapp;
 
 --
--- Name: tblktobanken_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblktobanken_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblktobanken_fldindex_seq
@@ -108,17 +108,17 @@ CREATE SEQUENCE tblktobanken_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblktobanken_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblktobanken_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblktobanken_fldindex_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+-- Name: tblktobanken_fldindex_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spielplatzapp
 --
 
 ALTER SEQUENCE tblktobanken_fldindex_seq OWNED BY tblktobanken.fldindex;
 
 
 --
--- Name: tblktotyp; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblktotyp; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblktotyp (
@@ -128,10 +128,10 @@ CREATE TABLE tblktotyp (
 );
 
 
-ALTER TABLE public.tblktotyp OWNER TO root;
+ALTER TABLE public.tblktotyp OWNER TO spielplatzapp;
 
 --
--- Name: tblktotyp_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblktotyp_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblktotyp_fldindex_seq
@@ -142,17 +142,17 @@ CREATE SEQUENCE tblktotyp_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblktotyp_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblktotyp_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblktotyp_fldindex_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+-- Name: tblktotyp_fldindex_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spielplatzapp
 --
 
 ALTER SEQUENCE tblktotyp_fldindex_seq OWNED BY tblktotyp.fldindex;
 
 
 --
--- Name: tblmarkers_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblmarkers_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblmarkers_fldindex_seq
@@ -163,10 +163,10 @@ CREATE SEQUENCE tblmarkers_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblmarkers_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblmarkers_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblmarkers; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmarkers; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblmarkers (
@@ -179,10 +179,10 @@ CREATE TABLE tblmarkers (
 );
 
 
-ALTER TABLE public.tblmarkers OWNER TO root;
+ALTER TABLE public.tblmarkers OWNER TO spielplatzapp;
 
 --
--- Name: tblmenu_liste_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblmenu_liste_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblmenu_liste_fldindex_seq
@@ -193,10 +193,10 @@ CREATE SEQUENCE tblmenu_liste_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblmenu_liste_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblmenu_liste_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblmenu_liste; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmenu_liste; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblmenu_liste (
@@ -220,10 +220,10 @@ CREATE TABLE tblmenu_liste (
 );
 
 
-ALTER TABLE public.tblmenu_liste OWNER TO root;
+ALTER TABLE public.tblmenu_liste OWNER TO spielplatzapp;
 
 --
--- Name: tblmenu_modul_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblmenu_modul_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblmenu_modul_fldindex_seq
@@ -234,10 +234,10 @@ CREATE SEQUENCE tblmenu_modul_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblmenu_modul_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblmenu_modul_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblmenu_modul; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmenu_modul; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblmenu_modul (
@@ -252,10 +252,10 @@ CREATE TABLE tblmenu_modul (
 );
 
 
-ALTER TABLE public.tblmenu_modul OWNER TO root;
+ALTER TABLE public.tblmenu_modul OWNER TO spielplatzapp;
 
 --
--- Name: tblmenu_projekt_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblmenu_projekt_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblmenu_projekt_fldindex_seq
@@ -266,10 +266,10 @@ CREATE SEQUENCE tblmenu_projekt_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblmenu_projekt_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblmenu_projekt_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblmenu_projekt; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmenu_projekt; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblmenu_projekt (
@@ -279,10 +279,10 @@ CREATE TABLE tblmenu_projekt (
 );
 
 
-ALTER TABLE public.tblmenu_projekt OWNER TO root;
+ALTER TABLE public.tblmenu_projekt OWNER TO spielplatzapp;
 
 --
--- Name: tblmenu_typ; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmenu_typ; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblmenu_typ (
@@ -291,10 +291,10 @@ CREATE TABLE tblmenu_typ (
 );
 
 
-ALTER TABLE public.tblmenu_typ OWNER TO root;
+ALTER TABLE public.tblmenu_typ OWNER TO spielplatzapp;
 
 --
--- Name: tblpublictyp; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblpublictyp; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblpublictyp (
@@ -303,10 +303,10 @@ CREATE TABLE tblpublictyp (
 );
 
 
-ALTER TABLE public.tblpublictyp OWNER TO root;
+ALTER TABLE public.tblpublictyp OWNER TO spielplatzapp;
 
 --
--- Name: tblschulart_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblschulart_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblschulart_fldindex_seq
@@ -317,10 +317,10 @@ CREATE SEQUENCE tblschulart_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblschulart_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblschulart_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblschulart; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblschulart; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblschulart (
@@ -329,10 +329,10 @@ CREATE TABLE tblschulart (
 );
 
 
-ALTER TABLE public.tblschulart OWNER TO root;
+ALTER TABLE public.tblschulart OWNER TO spielplatzapp;
 
 --
--- Name: tblschulen_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblschulen_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblschulen_fldindex_seq
@@ -343,10 +343,10 @@ CREATE SEQUENCE tblschulen_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblschulen_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblschulen_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblschulen; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblschulen; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblschulen (
@@ -365,10 +365,10 @@ CREATE TABLE tblschulen (
 );
 
 
-ALTER TABLE public.tblschulen OWNER TO root;
+ALTER TABLE public.tblschulen OWNER TO spielplatzapp;
 
 --
--- Name: tblschultyp_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblschultyp_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblschultyp_fldindex_seq
@@ -379,10 +379,10 @@ CREATE SEQUENCE tblschultyp_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblschultyp_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblschultyp_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblschultyp; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblschultyp; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblschultyp (
@@ -391,10 +391,10 @@ CREATE TABLE tblschultyp (
 );
 
 
-ALTER TABLE public.tblschultyp OWNER TO root;
+ALTER TABLE public.tblschultyp OWNER TO spielplatzapp;
 
 --
--- Name: tblsel; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblsel; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblsel (
@@ -403,10 +403,10 @@ CREATE TABLE tblsel (
 );
 
 
-ALTER TABLE public.tblsel OWNER TO root;
+ALTER TABLE public.tblsel OWNER TO spielplatzapp;
 
 --
--- Name: tblspielgeraete; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblspielgeraete; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblspielgeraete (
@@ -416,10 +416,10 @@ CREATE TABLE tblspielgeraete (
 );
 
 
-ALTER TABLE public.tblspielgeraete OWNER TO root;
+ALTER TABLE public.tblspielgeraete OWNER TO spielplatzapp;
 
 --
--- Name: tblstadtbezirk_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblstadtbezirk_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblstadtbezirk_fldindex_seq
@@ -430,10 +430,10 @@ CREATE SEQUENCE tblstadtbezirk_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblstadtbezirk_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblstadtbezirk_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblstadtbezirk; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblstadtbezirk; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblstadtbezirk (
@@ -442,10 +442,10 @@ CREATE TABLE tblstadtbezirk (
 );
 
 
-ALTER TABLE public.tblstadtbezirk OWNER TO root;
+ALTER TABLE public.tblstadtbezirk OWNER TO spielplatzapp;
 
 --
--- Name: tblstadtteil_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblstadtteil_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblstadtteil_fldindex_seq
@@ -456,10 +456,10 @@ CREATE SEQUENCE tblstadtteil_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblstadtteil_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblstadtteil_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblstadtteil; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblstadtteil; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblstadtteil (
@@ -468,10 +468,10 @@ CREATE TABLE tblstadtteil (
 );
 
 
-ALTER TABLE public.tblstadtteil OWNER TO root;
+ALTER TABLE public.tblstadtteil OWNER TO spielplatzapp;
 
 --
--- Name: tbltermine_grp; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tbltermine_grp; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tbltermine_grp (
@@ -481,10 +481,10 @@ CREATE TABLE tbltermine_grp (
 );
 
 
-ALTER TABLE public.tbltermine_grp OWNER TO root;
+ALTER TABLE public.tbltermine_grp OWNER TO spielplatzapp;
 
 --
--- Name: tbltermine_liste; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tbltermine_liste; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tbltermine_liste (
@@ -503,10 +503,10 @@ CREATE TABLE tbltermine_liste (
 );
 
 
-ALTER TABLE public.tbltermine_liste OWNER TO root;
+ALTER TABLE public.tbltermine_liste OWNER TO spielplatzapp;
 
 --
--- Name: tbltermine_serie; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tbltermine_serie; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tbltermine_serie (
@@ -518,10 +518,10 @@ CREATE TABLE tbltermine_serie (
 );
 
 
-ALTER TABLE public.tbltermine_serie OWNER TO root;
+ALTER TABLE public.tbltermine_serie OWNER TO spielplatzapp;
 
 --
--- Name: tbltranslate; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tbltranslate; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tbltranslate (
@@ -532,10 +532,10 @@ CREATE TABLE tbltranslate (
 );
 
 
-ALTER TABLE public.tbltranslate OWNER TO root;
+ALTER TABLE public.tbltranslate OWNER TO spielplatzapp;
 
 --
--- Name: tblversion_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: tblversion_fldindex_seq; Type: SEQUENCE; Schema: public; Owner: spielplatzapp
 --
 
 CREATE SEQUENCE tblversion_fldindex_seq
@@ -546,10 +546,10 @@ CREATE SEQUENCE tblversion_fldindex_seq
     CACHE 1;
 
 
-ALTER TABLE public.tblversion_fldindex_seq OWNER TO root;
+ALTER TABLE public.tblversion_fldindex_seq OWNER TO spielplatzapp;
 
 --
--- Name: tblversion; Type: TABLE; Schema: public; Owner: root; Tablespace: 
+-- Name: tblversion; Type: TABLE; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 CREATE TABLE tblversion (
@@ -560,31 +560,31 @@ CREATE TABLE tblversion (
 );
 
 
-ALTER TABLE public.tblversion OWNER TO root;
+ALTER TABLE public.tblversion OWNER TO spielplatzapp;
 
 --
--- Name: fldindex; Type: DEFAULT; Schema: public; Owner: root
+-- Name: fldindex; Type: DEFAULT; Schema: public; Owner: spielplatzapp
 --
 
 ALTER TABLE ONLY tblfilter ALTER COLUMN fldindex SET DEFAULT nextval('tblfilter_fldindex_seq'::regclass);
 
 
 --
--- Name: fldindex; Type: DEFAULT; Schema: public; Owner: root
+-- Name: fldindex; Type: DEFAULT; Schema: public; Owner: spielplatzapp
 --
 
 ALTER TABLE ONLY tblktobanken ALTER COLUMN fldindex SET DEFAULT nextval('tblktobanken_fldindex_seq'::regclass);
 
 
 --
--- Name: fldindex; Type: DEFAULT; Schema: public; Owner: root
+-- Name: fldindex; Type: DEFAULT; Schema: public; Owner: spielplatzapp
 --
 
 ALTER TABLE ONLY tblktotyp ALTER COLUMN fldindex SET DEFAULT nextval('tblktotyp_fldindex_seq'::regclass);
 
 
 --
--- Data for Name: tblfilter; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblfilter; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblfilter (fldindex, fldfeld, fldwert, fldmaske, fldname) FROM stdin;
@@ -602,14 +602,14 @@ COPY tblfilter (fldindex, fldfeld, fldwert, fldmaske, fldname) FROM stdin;
 
 
 --
--- Name: tblfilter_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblfilter_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblfilter_fldindex_seq', 10, true);
 
 
 --
--- Data for Name: tblfunc; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblfunc; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblfunc (fldindex, fldbez, fldphp, fldmenuid, fldtyp, fldtarget, fldparam, fldaktiv, fldname, fldtimestamp, fldid_version, fldversion) FROM stdin;
@@ -622,14 +622,14 @@ COPY tblfunc (fldindex, fldbez, fldphp, fldmenuid, fldtyp, fldtarget, fldparam, 
 
 
 --
--- Name: tblfunc_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblfunc_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblfunc_fldindex_seq', 6, true);
 
 
 --
--- Data for Name: tblktobanken; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblktobanken; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblktobanken (fldindex, fldbez, fldart, fldcalc, fldaktiv) FROM stdin;
@@ -637,14 +637,14 @@ COPY tblktobanken (fldindex, fldbez, fldart, fldcalc, fldaktiv) FROM stdin;
 
 
 --
--- Name: tblktobanken_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblktobanken_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblktobanken_fldindex_seq', 1, false);
 
 
 --
--- Data for Name: tblktotyp; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblktotyp; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblktotyp (fldindex, fldtyp, fldbez) FROM stdin;
@@ -653,14 +653,14 @@ COPY tblktotyp (fldindex, fldtyp, fldbez) FROM stdin;
 
 
 --
--- Name: tblktotyp_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblktotyp_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblktotyp_fldindex_seq', 1, true);
 
 
 --
--- Data for Name: tblmarkers; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblmarkers; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblmarkers (fldindex, fldname, fldaddress, fldlat, fldlng, fldtype) FROM stdin;
@@ -668,14 +668,14 @@ COPY tblmarkers (fldindex, fldname, fldaddress, fldlat, fldlng, fldtype) FROM st
 
 
 --
--- Name: tblmarkers_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblmarkers_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblmarkers_fldindex_seq', 1, false);
 
 
 --
--- Data for Name: tblmenu_liste; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblmenu_liste; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblmenu_liste (fldindex, fldmenu, fldtblwebadr, fldsort, "fldGroup", fldview, fldid_modul, fldparent, fldversion, fldtyp, fldname, fldtimestamp, fldid_publictyp, fldhelplink, fldtarget, fldid_menuprojekt, fldart) FROM stdin;
@@ -694,14 +694,14 @@ COPY tblmenu_liste (fldindex, fldmenu, fldtblwebadr, fldsort, "fldGroup", fldvie
 
 
 --
--- Name: tblmenu_liste_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblmenu_liste_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblmenu_liste_fldindex_seq', 11, true);
 
 
 --
--- Data for Name: tblmenu_modul; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblmenu_modul; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblmenu_modul (fldindex, fldbez, fldwebadr, fldlang, fldversion, fldtimestamp, fldsource, fldid_publictyp) FROM stdin;
@@ -720,14 +720,14 @@ COPY tblmenu_modul (fldindex, fldbez, fldwebadr, fldlang, fldversion, fldtimesta
 
 
 --
--- Name: tblmenu_modul_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblmenu_modul_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblmenu_modul_fldindex_seq', 11, true);
 
 
 --
--- Data for Name: tblmenu_projekt; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblmenu_projekt; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblmenu_projekt (fldindex, fldbez, fldaktiv) FROM stdin;
@@ -736,14 +736,14 @@ COPY tblmenu_projekt (fldindex, fldbez, fldaktiv) FROM stdin;
 
 
 --
--- Name: tblmenu_projekt_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblmenu_projekt_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblmenu_projekt_fldindex_seq', 1, false);
 
 
 --
--- Data for Name: tblmenu_typ; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblmenu_typ; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblmenu_typ (fldindex, "fldBez") FROM stdin;
@@ -751,7 +751,7 @@ COPY tblmenu_typ (fldindex, "fldBez") FROM stdin;
 
 
 --
--- Data for Name: tblpublictyp; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblpublictyp; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblpublictyp (fldindex, fldbez) FROM stdin;
@@ -760,7 +760,7 @@ COPY tblpublictyp (fldindex, fldbez) FROM stdin;
 
 
 --
--- Data for Name: tblschulart; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblschulart; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblschulart (fldindex, fldbez) FROM stdin;
@@ -777,14 +777,14 @@ COPY tblschulart (fldindex, fldbez) FROM stdin;
 
 
 --
--- Name: tblschulart_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblschulart_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblschulart_fldindex_seq', 9, true);
 
 
 --
--- Data for Name: tblschulen; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblschulen; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblschulen (fldindex, fldstadtbezirk, fldstadtteil, fldadresse, fldpostzustellbezirk, fldschulart, fldschultyp, fldname, fldstadt, fldxkoor, fldykoor, fldlink) FROM stdin;
@@ -1093,14 +1093,14 @@ COPY tblschulen (fldindex, fldstadtbezirk, fldstadtteil, fldadresse, fldpostzust
 
 
 --
--- Name: tblschulen_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblschulen_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblschulen_fldindex_seq', 301, true);
 
 
 --
--- Data for Name: tblschultyp; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblschultyp; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblschultyp (fldindex, fldbez) FROM stdin;
@@ -1110,14 +1110,14 @@ COPY tblschultyp (fldindex, fldbez) FROM stdin;
 
 
 --
--- Name: tblschultyp_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblschultyp_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblschultyp_fldindex_seq', 2, true);
 
 
 --
--- Data for Name: tblsel; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblsel; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblsel (fldindex, fldbez) FROM stdin;
@@ -1125,7 +1125,7 @@ COPY tblsel (fldindex, fldbez) FROM stdin;
 
 
 --
--- Data for Name: tblspielgeraete; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblspielgeraete; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblspielgeraete (fldindex, fldbez, fldid_spielplatz) FROM stdin;
@@ -1133,7 +1133,7 @@ COPY tblspielgeraete (fldindex, fldbez, fldid_spielplatz) FROM stdin;
 
 
 --
--- Data for Name: tblstadtbezirk; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblstadtbezirk; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblstadtbezirk (fldindex, fldbez) FROM stdin;
@@ -1150,14 +1150,14 @@ COPY tblstadtbezirk (fldindex, fldbez) FROM stdin;
 
 
 --
--- Name: tblstadtbezirk_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblstadtbezirk_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblstadtbezirk_fldindex_seq', 9, true);
 
 
 --
--- Data for Name: tblstadtteil; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblstadtteil; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblstadtteil (fldindex, fldbez) FROM stdin;
@@ -1247,14 +1247,14 @@ COPY tblstadtteil (fldindex, fldbez) FROM stdin;
 
 
 --
--- Name: tblstadtteil_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblstadtteil_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblstadtteil_fldindex_seq', 82, true);
 
 
 --
--- Data for Name: tbltermine_grp; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tbltermine_grp; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tbltermine_grp (fldindex, fldbez, fldfarbe) FROM stdin;
@@ -1262,7 +1262,7 @@ COPY tbltermine_grp (fldindex, fldbez, fldfarbe) FROM stdin;
 
 
 --
--- Data for Name: tbltermine_liste; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tbltermine_liste; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tbltermine_liste (fldindex, fldbez, fldkurz, fldvondatum, fldvonuhrzeit, fldbisdatum, fldbisuhrzeit, fldid_terminegrp, fldfarbe, fldid_terminserie, fldtermintyp, fldlink) FROM stdin;
@@ -1270,7 +1270,7 @@ COPY tbltermine_liste (fldindex, fldbez, fldkurz, fldvondatum, fldvonuhrzeit, fl
 
 
 --
--- Data for Name: tbltermine_serie; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tbltermine_serie; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tbltermine_serie (fldindex, fldbez, fldfarbe, fldimagepfad, fldsel) FROM stdin;
@@ -1278,7 +1278,7 @@ COPY tbltermine_serie (fldindex, fldbez, fldfarbe, fldimagepfad, fldsel) FROM st
 
 
 --
--- Data for Name: tbltranslate; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tbltranslate; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tbltranslate (fldindex, fldlang, fldbez, fldname) FROM stdin;
@@ -1286,7 +1286,7 @@ COPY tbltranslate (fldindex, fldlang, fldbez, fldname) FROM stdin;
 
 
 --
--- Data for Name: tblversion; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: tblversion; Type: TABLE DATA; Schema: public; Owner: spielplatzapp
 --
 
 COPY tblversion (fldindex, fldbez, fldkurz, flddatum) FROM stdin;
@@ -1295,14 +1295,14 @@ COPY tblversion (fldindex, fldbez, fldkurz, flddatum) FROM stdin;
 
 
 --
--- Name: tblversion_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: tblversion_fldindex_seq; Type: SEQUENCE SET; Schema: public; Owner: spielplatzapp
 --
 
 SELECT pg_catalog.setval('tblversion_fldindex_seq', 1, true);
 
 
 --
--- Name: tblfilter_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblfilter_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblfilter
@@ -1310,7 +1310,7 @@ ALTER TABLE ONLY tblfilter
 
 
 --
--- Name: tblfunc_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblfunc_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblfunc
@@ -1318,7 +1318,7 @@ ALTER TABLE ONLY tblfunc
 
 
 --
--- Name: tblktobanken_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblktobanken_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblktobanken
@@ -1326,7 +1326,7 @@ ALTER TABLE ONLY tblktobanken
 
 
 --
--- Name: tblktotyp_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblktotyp_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblktotyp
@@ -1334,7 +1334,7 @@ ALTER TABLE ONLY tblktotyp
 
 
 --
--- Name: tblmarkers_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmarkers_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblmarkers
@@ -1342,7 +1342,7 @@ ALTER TABLE ONLY tblmarkers
 
 
 --
--- Name: tblmenu_liste_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmenu_liste_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblmenu_liste
@@ -1350,7 +1350,7 @@ ALTER TABLE ONLY tblmenu_liste
 
 
 --
--- Name: tblmenu_modul_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmenu_modul_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblmenu_modul
@@ -1358,7 +1358,7 @@ ALTER TABLE ONLY tblmenu_modul
 
 
 --
--- Name: tblmenu_projekt_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmenu_projekt_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblmenu_projekt
@@ -1366,7 +1366,7 @@ ALTER TABLE ONLY tblmenu_projekt
 
 
 --
--- Name: tblmenu_typ_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblmenu_typ_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblmenu_typ
@@ -1374,7 +1374,7 @@ ALTER TABLE ONLY tblmenu_typ
 
 
 --
--- Name: tblpublictyp_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblpublictyp_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblpublictyp
@@ -1382,7 +1382,7 @@ ALTER TABLE ONLY tblpublictyp
 
 
 --
--- Name: tblschulart_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblschulart_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblschulart
@@ -1390,7 +1390,7 @@ ALTER TABLE ONLY tblschulart
 
 
 --
--- Name: tblschulbezirk_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblschulbezirk_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblstadtbezirk
@@ -1398,7 +1398,7 @@ ALTER TABLE ONLY tblstadtbezirk
 
 
 --
--- Name: tblschulen_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblschulen_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblschulen
@@ -1406,7 +1406,7 @@ ALTER TABLE ONLY tblschulen
 
 
 --
--- Name: tblschultyp_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblschultyp_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblschultyp
@@ -1414,7 +1414,7 @@ ALTER TABLE ONLY tblschultyp
 
 
 --
--- Name: tblsel_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblsel_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblsel
@@ -1422,7 +1422,7 @@ ALTER TABLE ONLY tblsel
 
 
 --
--- Name: tblspielgeraete_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblspielgeraete_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblspielgeraete
@@ -1430,7 +1430,7 @@ ALTER TABLE ONLY tblspielgeraete
 
 
 --
--- Name: tblstadtteil_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblstadtteil_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblstadtteil
@@ -1438,7 +1438,7 @@ ALTER TABLE ONLY tblstadtteil
 
 
 --
--- Name: tbltermine_grp_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tbltermine_grp_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tbltermine_grp
@@ -1446,7 +1446,7 @@ ALTER TABLE ONLY tbltermine_grp
 
 
 --
--- Name: tbltermine_liste_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tbltermine_liste_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tbltermine_liste
@@ -1454,7 +1454,7 @@ ALTER TABLE ONLY tbltermine_liste
 
 
 --
--- Name: tbltermine_serie_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tbltermine_serie_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tbltermine_serie
@@ -1462,7 +1462,7 @@ ALTER TABLE ONLY tbltermine_serie
 
 
 --
--- Name: tbltranslate_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tbltranslate_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tbltranslate
@@ -1470,7 +1470,7 @@ ALTER TABLE ONLY tbltranslate
 
 
 --
--- Name: tblversion_pkey; Type: CONSTRAINT; Schema: public; Owner: root; Tablespace: 
+-- Name: tblversion_pkey; Type: CONSTRAINT; Schema: public; Owner: spielplatzapp; Tablespace: 
 --
 
 ALTER TABLE ONLY tblversion

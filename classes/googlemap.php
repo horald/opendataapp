@@ -17,8 +17,9 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      echo "<script src='http://maps.google.com/maps/api/js?v=3&sensor=false' type='text/javascript'></script>";
      echo "<script type='text/javascript'>";
 
+     echo "</script>";
      echo "</head>";
-echo "==>1a<br>";
+echo "==>1b<br>";
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
      //echo $count."=count<br>";

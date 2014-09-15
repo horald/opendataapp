@@ -14,6 +14,9 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      echo " body { font: normal 10pt Helvetica, Arial; }";
      echo " #map { width: 640px; height: 480px; border: 0px; padding: 0px; }";
      echo "</style>";
+     echo "<script src='http://maps.google.com/maps/api/js?v=3&sensor=false' type='text/javascript'></script>";
+     echo "<script type='text/javascript'>";
+
      echo "</head>";
 echo "==>1a<br>";
      $dbselarr = $_SESSION['DBSELARR'];

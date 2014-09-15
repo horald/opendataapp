@@ -31,8 +31,8 @@ echo "<link href='css/jstyle.css' rel='stylesheet'>";
 //echo "<link rel='stylesheet' href='../includes/bootstrap/css/bootstrap-multiselect.css' type='text/css'/>";
 
 
-echo "<script type='text/javascript' src='../includes/bootstrap/js/bootstrap-datepicker.js' charset='UTF-8'></script>";
-echo "<script src='datetimepicker_css.js'></script>";
+//echo "<script type='text/javascript' src='../includes/bootstrap/js/bootstrap-datepicker.js' charset='UTF-8'></script>";
+//echo "<script src='datetimepicker_css.js'></script>";
 
 
 //fullcalendar

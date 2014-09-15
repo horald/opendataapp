@@ -5,6 +5,7 @@ include("../config.php");
 include("dbtools.php");
 include("bootstrapfunc.php");
 include("../sites/views/wp_".$menu."/showtab.inc.php");
+echo "in map<br>";
 //bootstraphead("NO");
 //bootstrapbegin($pararray['headline']);
 //bootstrapend();

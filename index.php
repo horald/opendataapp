@@ -38,7 +38,7 @@ JDEBUG ? $_PROFILER->mark('afterLoad') : null;
 echo "==>4<br>";
 
 // Instantiate the application.
-$app = JFactory::getApplication('site');
+//$app = JFactory::getApplication('site');
 echo "==>5<br>";
 
 // Execute the application.

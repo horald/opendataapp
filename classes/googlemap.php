@@ -8,8 +8,9 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 //bootstraphead("NO");
 //bootstrapbegin($pararray['headline']);
 //bootstrapend();
+
+     echo "<html>";
 ?>
-     <html>
      <head>
      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
      <title>Google Map</title>
@@ -82,8 +83,8 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 
                      $xkoor=$row['fldxkoor'];
                      $ykoor=$row['fldykoor']; 
-                     //echo "center: new google.maps.LatLng(".$xkoor.", ".$ykoor."),";
-                     echo "center: new google.maps.LatLng(50.93664488843189, 6.961641311645508),";
+                     echo "center: new google.maps.LatLng(".$xkoor.", ".$ykoor."),";
+                     //echo "center: new google.maps.LatLng(50.93664488843189, 6.961641311645508),";
 ?>
                      zoom: 11,
                      mapTypeId: google.maps.MapTypeId.ROADMAP,

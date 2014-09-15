@@ -5,7 +5,6 @@ include("../config.php");
 include("dbtools.php");
 include("bootstrapfunc.php");
 include("../sites/views/wp_".$menu."/showtab.inc.php");
-echo "in map<br>";
 //bootstraphead("NO");
 //bootstrapbegin($pararray['headline']);
 //bootstrapend();
@@ -77,7 +76,7 @@ echo "in map<br>";
              map = new google.maps.Map(document.getElementById("map"), {
 <?php
                      $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
-                     //echo $query."<br>";
+                     echo $query."<br>";
                      $qryres = db_query($query," SELECT-Error",$gdbtyp);
                      $row = db_fetch($qryres,$gdbtyp);
 

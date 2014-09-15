@@ -10,6 +10,7 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 //bootstrapend();
 
      echo "<html>";
+echo "1<br>";
 ?>
      <head>
      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>

@@ -16,7 +16,7 @@ if (version_compare(PHP_VERSION, '5.3.10', '<'))
  * define() is used in the installation folder rather than "const" to not error for PHP 5.2 and lower
  */
 define('_JEXEC', 1);
-//echo "==>1<br>";
+echo "==>1<br>";
 
 if (file_exists(__DIR__ . '/defines.php'))
 {
@@ -28,18 +28,18 @@ if (!defined('_JDEFINES'))
 	define('JPATH_BASE', __DIR__);
 	require_once JPATH_BASE . '/includes/defines.php';
 }
-//echo "==>2<br>";
+echo "==>2<br>";
 
 require_once JPATH_BASE . '/includes/framework.php';
-//echo "==>3<br>";
+echo "==>3<br>";
 
 // Mark afterLoad in the profiler.
 JDEBUG ? $_PROFILER->mark('afterLoad') : null;
-//echo "==>4<br>";
+echo "==>4<br>";
 
 // Instantiate the application.
 $app = JFactory::getApplication('site');
-//echo "==>5<br>";
+echo "==>5<br>";
 
 // Execute the application.
 //$app->execute();

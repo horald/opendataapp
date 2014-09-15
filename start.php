@@ -11,7 +11,7 @@ function startmenu($readonly,$dbtyp) {
     $treeMenu->SetCaption("Navigation");
 
     page_menu($treeMenu,'0','','',$readonly,$dbtyp);
-    mysql_close();
+    //mysql_close();
 
     $treeMenu->Debug(false);
     ## *** set form submission type: "get" or "post"

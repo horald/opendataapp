@@ -82,8 +82,8 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 
                      $xkoor=$row['fldxkoor'];
                      $ykoor=$row['fldykoor']; 
-                     echo "center: new google.maps.LatLng(".$xkoor.", ".$ykoor."),";
-                     //echo "center: new google.maps.LatLng(50.93664488843189, 6.961641311645508),";
+                     //echo "center: new google.maps.LatLng(".$xkoor.", ".$ykoor."),";
+                     echo "center: new google.maps.LatLng(50.93664488843189, 6.961641311645508),";
 ?>
                      zoom: 11,
                      mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -110,9 +110,9 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 <?php
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
-     echo $count."=count<br>";
+     //echo $count."=count<br>";
      $query="SELECT * FROM ".$pararray['dbtable'];
-     echo $query."<br>";
+     //echo $query."<br>";
      $qryres = db_query($query," SELECT-Error",$gdbtyp);
      $ds="";
      for ( $x = 0; $x < $count; $x++ ) {

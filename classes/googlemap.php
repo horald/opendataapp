@@ -5,14 +5,10 @@ include("../config.php");
 include("dbtools.php");
 include("bootstrapfunc.php");
 include("../sites/views/wp_".$menu."/showtab.inc.php");
-//bootstraphead("NO");
-//bootstrapbegin($pararray['headline']);
-//bootstrapend();
 
      echo "<html>";
-echo "1<br>";
+     echo "<head>";
 ?>
-     <head>
      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
      <title>Google Map</title>
      <style type="text/css">
@@ -108,8 +104,9 @@ echo "1<br>";
      }
 
      </script>
-     </head>
 <?php
+     echo "</head>";
+     echo "2<br>";
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
      //echo $count."=count<br>";

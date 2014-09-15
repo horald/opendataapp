@@ -8,8 +8,14 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 
      echo "<html>";
      echo "<head>";
+     echo "<meta http-equiv='content-type' content='text/html; charset=utf-8'/>";
+     echo "<title>Google Map</title>";
+     echo "<style type='text/css'>";
+     echo " body { font: normal 10pt Helvetica, Arial; }";
+     echo " #map { width: 640px; height: 480px; border: 0px; padding: 0px; }";
+     echo "</style>";
      echo "</head>";
-echo "==>1<br>";
+echo "==>1a<br>";
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
      //echo $count."=count<br>";

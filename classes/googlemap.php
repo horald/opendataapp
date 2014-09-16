@@ -67,8 +67,8 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      echo "function initMap(parameterliste) {";
      echo "  var i = 0;";
 
-//                     $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
-                     //echo $query."<br>";
+                     $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
+                     echo $query."<br>";
 //                     $qryres = db_query($query," SELECT-Error",$gdbtyp);
 //                     $row = db_fetch($qryres,$gdbtyp);
 
@@ -102,7 +102,7 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 
      echo "</script>";
      echo "</head>";
-echo "==>1g<br>";
+echo "==>1h<br>";
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
      //echo $count."=count<br>";

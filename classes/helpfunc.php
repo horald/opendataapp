@@ -6,7 +6,7 @@ function hilfefunc($menu,$idwert,$gdbtyp) {
   $pfad = "../sites/views/wp_".$menu."/";
   echo "<a class='btn btn-primary' href='showtab.php?menu=".$menu."&idwert=".$idwert."'>zur&uumlck</a> ";
   $datei="help.".$langshort.".html";
-echo $datei."<br>";
+  //echo $datei."<br>";
   if ( file_exists ( $pfad.$datei ) ) {
     $lines = file($pfad.$datei);
     foreach ($lines as $line_num => $helpline) {

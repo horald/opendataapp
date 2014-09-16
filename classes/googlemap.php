@@ -67,16 +67,17 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      echo "function initMap(parameterliste) {";
      echo "  var i = 0;";
 
-//     echo "  meinDS = parameterliste.split(';');";
+                     $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
+                     //echo $query."<br>";
+                     $qryres = db_query($query," SELECT-Error",$gdbtyp);
+                     $row = db_fetch($qryres,$gdbtyp);
+
+                     $xkoor=$row['fldxkoor'];
+                     $ykoor=$row['fldykoor']; 
+
+     echo "  meinDS = parameterliste.split(';');";
 //     echo "        map = new google.maps.Map(document.getElementById('map'), {";
 
-//                     $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
-                     //echo $query."<br>";
-//                     $qryres = db_query($query," SELECT-Error",$gdbtyp);
-//                     $row = db_fetch($qryres,$gdbtyp);
-
-//                     $xkoor=$row['fldxkoor'];
-//                     $ykoor=$row['fldykoor']; 
 //                     echo "center: new google.maps.LatLng(".$xkoor.", ".$ykoor."),";
                      //echo "center: new google.maps.LatLng(50.93664488843189, 6.961641311645508),";
 
@@ -101,7 +102,7 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 
      echo "</script>";
      echo "</head>";
-echo "==>1f<br>";
+echo "==>1g<br>";
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
      //echo $count."=count<br>";

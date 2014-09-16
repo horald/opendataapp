@@ -5,10 +5,12 @@ $sprache = isset($_POST['sprache']) ? $_POST['sprache'] : 'english';
 include "../language/lang_".$sprache.".php";
 
 
-function db_connect() {
-//echo "";
-	//$conn = mysql_connect($_SESSION['dbhost'], $_SESSION['dbuser'], $_SESSION['dbpass']);
+function db_connect($dbtyp) {
+  if ($dbtyp=="mysql") {
+	$conn = mysql_connect($_SESSION['dbhost'], $_SESSION['dbuser'], $_SESSION['dbpass']);
+  } else {
         $conn = pg_connect("host=".$_SESSION['dbhost']." dbname=".$_SESSION['dbname']." user=".$_SESSION['dbuser']." password=".$_SESSION['dbpass']) or die(pg_last_error());
+  }
 	return $conn;
 }
 
@@ -26,7 +28,7 @@ if (isset($_REQUEST['step'])) {
       $_SESSION['dbpass'] = $_REQUEST['dbpass'];
       $_SESSION['dbtyp']  = $_REQUEST['dbtyp'];
       echo "verify account: ";
-      if (!db_connect()) {
+      if (!db_connect($_SESSION['dbtyp'])) {
         echo "wrong. Please correct.";
 	     exit;
       }

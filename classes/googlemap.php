@@ -103,10 +103,10 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 
      echo "</script>";
      echo "</head>";
-echo "==>1k<br>";
+     //echo "==>1k<br>";
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
-     echo $count."=count<br>";
+     //echo $count."=count<br>";
      $query="SELECT * FROM ".$pararray['dbtable'];
      //echo $query."<br>";
      $qryres = db_query($query," SELECT-Error",$gdbtyp);

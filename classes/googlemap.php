@@ -64,8 +64,8 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      echo "       });";
      echo "}";
 
-//     echo "function initMap(parameterliste) {";
-//     echo "  var i = 0;";
+     echo "function initMap(parameterliste) {";
+     echo "  var i = 0;";
 
 //     echo "  meinDS = parameterliste.split(';');";
 //     echo "        map = new google.maps.Map(document.getElementById('map'), {";
@@ -97,7 +97,7 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
 //     echo "      addMarker(meinArray[0], meinArray[1],'<a href="'+meinArray[2]+'">'+meinArray[3]+'</a>','desc','complete');";
 //     echo "    }";
 
-//     echo "}";
+     echo "}";
 
      echo "</script>";
      echo "</head>";

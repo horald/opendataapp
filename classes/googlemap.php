@@ -67,13 +67,13 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      echo "function initMap(parameterliste) {";
      echo "  var i = 0;";
 
-                     $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
+//                     $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
                      //echo $query."<br>";
-                     $qryres = db_query($query," SELECT-Error",$gdbtyp);
-                     $row = db_fetch($qryres,$gdbtyp);
+//                     $qryres = db_query($query," SELECT-Error",$gdbtyp);
+//                     $row = db_fetch($qryres,$gdbtyp);
 
-                     $xkoor=$row['fldxkoor'];
-                     $ykoor=$row['fldykoor']; 
+//                     $xkoor=$row['fldxkoor'];
+//                     $ykoor=$row['fldykoor']; 
 
      echo "  meinDS = parameterliste.split(';');";
 //     echo "        map = new google.maps.Map(document.getElementById('map'), {";

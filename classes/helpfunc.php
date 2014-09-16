@@ -4,7 +4,7 @@ header("content-type: text/html; charset=utf-8");
 function hilfefunc($menu,$idwert,$gdbtyp) {
   include("../config.php");
   $pfad = "../sites/views/wp_".$menu."/";
-  echo "<a class='btn btn-primary' href='showtab.php?menu=".$menu."&idwert=".$idwert."'>zur&uumlck</a> ";
+  echo "<a class='btn btn-primary' href='showtab.php?menu=".$menu."&idwert=".$idwert."'>zur&uumlck</a><br> ";
   $datei="help.".$langshort.".html";
   //echo $datei."<br>";
   if ( file_exists ( $pfad.$datei ) ) {

@@ -64,40 +64,40 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      echo "       });";
      echo "}";
 
-     echo "function initMap(parameterliste) {";
-     echo "  var i = 0;";
+//     echo "function initMap(parameterliste) {";
+//     echo "  var i = 0;";
 
-     echo "  meinDS = parameterliste.split(';');";
-     echo "        map = new google.maps.Map(document.getElementById('map'), {";
+//     echo "  meinDS = parameterliste.split(';');";
+//     echo "        map = new google.maps.Map(document.getElementById('map'), {";
 
-                     $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
+//                     $query="SELECT * FROM tblorte WHERE fldaktiv='J'";
                      //echo $query."<br>";
-                     $qryres = db_query($query," SELECT-Error",$gdbtyp);
-                     $row = db_fetch($qryres,$gdbtyp);
+//                     $qryres = db_query($query," SELECT-Error",$gdbtyp);
+//                     $row = db_fetch($qryres,$gdbtyp);
 
-                     $xkoor=$row['fldxkoor'];
-                     $ykoor=$row['fldykoor']; 
-                     echo "center: new google.maps.LatLng(".$xkoor.", ".$ykoor."),";
+//                     $xkoor=$row['fldxkoor'];
+//                     $ykoor=$row['fldykoor']; 
+//                     echo "center: new google.maps.LatLng(".$xkoor.", ".$ykoor."),";
                      //echo "center: new google.maps.LatLng(50.93664488843189, 6.961641311645508),";
 
-     echo "          zoom: 11,";
-     echo "          mapTypeId: google.maps.MapTypeId.ROADMAP,";
-     echo "          mapTypeControl: false,";
-     echo "          mapTypeControlOptions: {";
-     echo "                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR";
-     echo "          },";
-     echo "          navigationControl: true,";
-     echo "          navigationControlOptions: {";
-     echo "                 style: google.maps.NavigationControlStyle.SMALL";
-     echo "          }";
-     echo "  });";
+//     echo "          zoom: 11,";
+//     echo "          mapTypeId: google.maps.MapTypeId.ROADMAP,";
+//     echo "          mapTypeControl: false,";
+//     echo "          mapTypeControlOptions: {";
+//     echo "                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR";
+//     echo "          },";
+//     echo "          navigationControl: true,";
+//     echo "          navigationControlOptions: {";
+//     echo "                 style: google.maps.NavigationControlStyle.SMALL";
+//     echo "          }";
+//     echo "  });";
 
-     echo "    for (i=0; i < meinDS.length ; i++ ) {";
-     echo "      meinArray = meinDS[i].split(",");";
-     echo "      addMarker(meinArray[0], meinArray[1],'<a href="'+meinArray[2]+'">'+meinArray[3]+'</a>','desc','complete');";
-     echo "    }";
+//     echo "    for (i=0; i < meinDS.length ; i++ ) {";
+//     echo "      meinArray = meinDS[i].split(",");";
+//     echo "      addMarker(meinArray[0], meinArray[1],'<a href="'+meinArray[2]+'">'+meinArray[3]+'</a>','desc','complete');";
+//     echo "    }";
 
-     echo "}";
+//     echo "}";
 
      echo "</script>";
      echo "</head>";

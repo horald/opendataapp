@@ -1,0 +1,3 @@
+Version 1.005:
+- Auf yii framework umgestellt.
+- Dies ermöglicht ein login mit usermenu eintraegen.

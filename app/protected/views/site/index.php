@@ -10,10 +10,12 @@ echo "<legend>Willkommen bei <i>".CHtml::encode(Yii::app()->name)."</i></legend>
 echo "<div class='row-fluid'>";
 echo "<pre>";
 echo "<table>";
-$version = file_get_contents("/var/www/html".Yii::app()->request->baseUrl."/version.txt");
+$root_path = $_SERVER['DOCUMENT_ROOT'];
+$version = file_get_contents($root_path.Yii::app()->request->baseUrl."/version.txt");
 //$version="unbekannt=".Yii::app()->request->baseUrl;
 echo "<tr><td width=150>Version</td><td>: ".$version."</td></tr>";
 //echo "<tr><td>Datenbanktyp</td><td>: ".$gdbtyp."</td></tr>";
+echo "<tr><td>URL unter</td><td>: <a href='http://community.codefor.de/spielplatzapp/index.php' target='_blank'>Opendatapp bei codefor.de</a></td></tr>";
 echo "<tr><td>erstellt f&uumlr</td><td>: <a href='http://codefor.de/koeln/index.html' target='_blank'>codeforgermany</a></td></tr>";
 echo "<tr><td>Sourcecode unter</td><td>: <a href='https://github.com/horald/opendataapp' target='_blank'>github:opendataapp</a></td></tr>";
 echo "</table>";

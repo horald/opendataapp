@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../config.php");
 include("dbtools.php");
 ?>
@@ -106,15 +107,19 @@ include("dbtools.php");
      </script>
      </head>
 <?php
-//     $query = mysql_query("SELECT * FROM tblmarkers");
-     $query = db_query("SELECT * FROM tblmarkers"," SELECT-Error");
+     $dbselarr = $_SESSION['DBSELARR'];
+     $count=sizeof($dbselarr);
+//     $query = db_query("SELECT * FROM tblmarkers"," SELECT-Error","mysql");
      $ds="";
-//     while ($row = mysql_fetch_array($query)){
-     while ($row = db_fetch($query)){
-     	  $name=$row['fldname'];
-     	  //$name = strtr($name, " ", "&nbsp;");
-        $ds=$ds.$row['fldlat'].",".$row['fldlng'].",showtab.php?menu=playground,".$name.";";
-     }	
+     for ( $x = 0; $x < $count; $x++ ) {
+//     while ($row = db_fetch($query,"mysql")){
+         $arrquery="SELECT * FROM tblmarkers WHERE fldindex=".$dbselarr[$x];
+         //echo $arrquery."<br>";
+         $qryarr = db_query($arrquery," SELECT-Error",$gdbtyp);
+         $row = db_fetch($qryarr,$gdbtyp);
+	 $name=$row['fldname'];
+         $ds=$ds.$row['fldxkoor'].",".$row['fldykoor'].",showdata.php?menu=playground,".$name.";";
+     }
      $array=chr(34).$ds.chr(34);
      echo "<body onload='initMap(".$array.")' style='margin:0px; border:0px; padding:0px;'>";
      echo "<div id='map'></div>";

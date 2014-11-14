@@ -33,8 +33,18 @@ include("pagemenu.php");
 echo "<legend>Navigation</legend>";
 $vaterid='0';
 pagemenu($vaterid);
+if (Yii::app()->user->isGuest) {
+  echo "<ul class='nav nav-pills nav-stacked'>";
+  echo "<li>";
+  echo CHtml::link('Login', array('site/login')); 
+  echo "</li>";
+  echo "<ul>";
+}
 if (!Yii::app()->user->isGuest) {
   echo "<ul class='nav nav-pills nav-stacked'>";
+  echo "<li>";
+  echo CHtml::link('Register', array('/register')); 
+  echo "</li>";
   echo "<li>";
   echo CHtml::link('Logout ('.Yii::app()->user->name.')', array('site/logout')); 
   echo "</li>";

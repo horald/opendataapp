@@ -118,7 +118,8 @@ include("dbtools.php");
          $qryarr = db_query($arrquery," SELECT-Error",$gdbtyp);
          $row = db_fetch($qryarr,$gdbtyp);
 	 $name=$row['fldname'];
-         $ds=$ds.$row['fldxkoor'].",".$row['fldykoor'].",showdata.php?menu=playground,".$name.";";
+         $idwert=$row['fldindex'];
+         $ds=$ds.$row['fldxkoor'].",".$row['fldykoor'].",showdata.php?menu=playground&idwert=".$idwert.",".$name.";";
      }
      $array=chr(34).$ds.chr(34);
      echo "<body onload='initMap(".$array.")' style='margin:0px; border:0px; padding:0px;'>";

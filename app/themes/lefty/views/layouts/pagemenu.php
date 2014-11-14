@@ -6,7 +6,7 @@ function pagemenu($vaterid) {
 //  $id = $this->paramid;
 //  echo $id."=id<br>";
   $connection=Yii::app()->db;   // Vorausgesetzt, Sie haben eine "db"-Komponente konfiguriert
-  $sql = "SELECT tblmenu_liste.fldindex AS fldmlindex, fldmenu, fldparent, fldart FROM tblmenu_liste, tblmenu_projekt AS mp WHERE fldid_menuprojekt=mp.fldindex AND mp.fldaktiv='J' AND fldview='J' AND fldparent='".$vaterid."' AND fldversion>='0303' ORDER BY fldsort";
+  $sql = "SELECT tblmenu_liste.fldindex AS fldmlindex, fldmenu, fldparent, fldart, fldTyp FROM tblmenu_liste, tblmenu_projekt AS mp WHERE fldid_menuprojekt=mp.fldindex AND mp.fldaktiv='J' AND fldview='J' AND fldparent='".$vaterid."' AND fldversion>='0303' ORDER BY fldsort";
   //echo $sql."<br>";
   $command=$connection->createCommand($sql);	
   $dataReader=$command->query();
@@ -47,7 +47,11 @@ function pagemenu($vaterid) {
           $strich="- ";
           $submenu="yes";
         }
-        echo CHtml::link($strich.$row['fldmenu'], array('site/page', 'view'=>'iframe', 'page'=>'http://localhost/own/opendataapp/'.$addr, 'idwert'=>$page, 'subid'=>$vaterid)); 
+        if ($row['fldTyp']=="YIIMODUL") {
+          echo CHtml::link($strich.$row['fldmenu'], array($addr, 'idwert'=>$page, 'subid'=>$vaterid)); 
+        } else {
+          echo CHtml::link($strich.$row['fldmenu'], array('site/page', 'view'=>'iframe', 'page'=>'http://localhost/own/opendataapp/'.$addr, 'idwert'=>$page, 'subid'=>$vaterid)); 
+        }
         echo "</li>";
       }
       //$step=$step+1;

@@ -1184,3 +1184,36 @@ Stack trace:
 #23 {main}
 REQUEST_URI=/own/opendataapp/app/index.php
 ---
+2014/11/13 17:56:38 [error] [php] Undefined index: fldTyp (/var/www/html/own/opendataapp/app/themes/lefty/views/layouts/pagemenu.php:50)
+Stack trace:
+#0 /var/www/html/own/opendataapp/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /var/www/html/own/opendataapp/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#2 /var/www/html/own/opendataapp/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#3 /var/www/html/own/opendataapp/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 /var/www/html/own/opendataapp/framework/web/CBaseController.php(206): CContentDecorator->run()
+#5 /var/www/html/own/opendataapp/framework/web/CBaseController.php(300): SiteController->endWidget()
+#6 /var/www/html/own/opendataapp/app/protected/views/layouts/column1.php(6): SiteController->endContent()
+#7 /var/www/html/own/opendataapp/framework/web/CBaseController.php(126): require()
+#8 /var/www/html/own/opendataapp/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /var/www/html/own/opendataapp/framework/web/CController.php(784): SiteController->renderFile()
+#10 /var/www/html/own/opendataapp/app/protected/controllers/SiteController.php(104): SiteController->render()
+#11 /var/www/html/own/opendataapp/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#12 /var/www/html/own/opendataapp/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/html/own/opendataapp/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/html/own/opendataapp/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/html/own/opendataapp/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/html/own/opendataapp/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/html/own/opendataapp/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /var/www/html/own/opendataapp/app/index.php(13): CWebApplication->run()
+REQUEST_URI=/own/opendataapp/app/index.php?r=site/login&idwert=1858&subid=0
+in /var/www/html/own/opendataapp/app/themes/lefty/views/layouts/pagemenu.php (50)
+in /var/www/html/own/opendataapp/app/themes/lefty/views/layouts/main.php (35)
+in /var/www/html/own/opendataapp/app/protected/views/layouts/column1.php (6)
+2014/11/13 18:15:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /var/www/html/own/opendataapp/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/own/opendataapp/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#1 /var/www/html/own/opendataapp/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/html/own/opendataapp/app/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/own/opendataapp/app/index.php?r=gii
+---

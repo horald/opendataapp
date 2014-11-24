@@ -110,6 +110,8 @@ if (isset($_GET['tiles'])) {
         //echo $x.",".$row['fldxkoor']."=marker<br>";
         $markers[$x][lat] = $row['fldxkoor'];
         $markers[$x][lng] = $row['fldykoor'];
+        $markers[$x][label] = '<a href="showdata.php?menu=playground&idwert='.$dbselarr[$x].'">'.$row['fldname'].'</a>';
+        $markers[$x][icontype] = 'green';
      }	
 
 ?>

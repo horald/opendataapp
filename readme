@@ -10,5 +10,5 @@ not exist the install routine will start. Only following the instructions.
 the app use yii framework so you have to give some rights
 sudo chmod -R 775 xx
 sudo chmod -R 775 assets
-sudo chown 
+
  

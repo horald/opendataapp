@@ -18,10 +18,11 @@ foreach($json_arr->features as $obj) {
   //$fldxkoor=$obj->attributes->geometry->x;
   $fldykoor=$obj->geometry->x;
   $fldxkoor=$obj->geometry->y;
+  $fldtischtennis=$obj->attributes->Tischtennis;
   echo $fldname.",";
   echo $fldxkoor.",";
   echo $fldstadtbezirk."<br>";
-  $query="INSERT INTO tblmarkers (fldname,fldstadtbezirk,fldstadtteil,fldspielplatzpaten,fldxkoor,fldykoor,fldtype) VALUES ('".$fldname."','".$fldstadtbezirk."','".$fldstadtteil."','".$fldspielplatzpaten."',".$fldxkoor.",".$fldykoor.",'spielplatzimport')";
+  $query="INSERT INTO tblmarkers (fldname,fldstadtbezirk,fldstadtteil,fldspielplatzpaten,fldxkoor,fldykoor,fldtype,fldtischtennis) VALUES ('".$fldname."','".$fldstadtbezirk."','".$fldstadtteil."','".$fldspielplatzpaten."',".$fldxkoor.",".$fldykoor.",'spielplatzimport','".$fldtischtennis."')";
   $result = mysql_query($query) or die(mysql_error());
 }  
 ?>

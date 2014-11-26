@@ -23,6 +23,11 @@ $listarray = array ( array ( 'label' => 'Nr',
                              'width' => 5, 
                              'type' => 'text',
                              'dbfield' => 'fldspielplatzpaten'), 
+                     array ( 'label' => 'Tischtennis',
+                             'name' => 'tischtennis', 
+                             'width' => 5, 
+                             'type' => 'text',
+                             'dbfield' => 'fldtischtennis'), 
                      array ( 'label' => 'X-Koor',
                              'name' => 'xkoor',
                              'width' => 10, 
@@ -61,6 +66,7 @@ $filterarray = array (
                                'sign' => '=',
                                'dbtable' => 'tblstadtteil',
                                'seldbfield' => 'fldbez',
+                               'selorder' => 'fldbez',
                                'dbfield' => 'fldstadtteil' ));
 
 

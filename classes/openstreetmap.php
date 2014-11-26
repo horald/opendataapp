@@ -109,9 +109,19 @@ if (isset($_GET['tiles'])) {
         $ds=$ds.$row['fldxkoor'].",".$row['fldykoor'].",".$row['fldlink'].",".$name.";";
         //echo $x.",".$row['fldxkoor']."=marker<br>";
         $markers[$x][lat] = $row['fldxkoor'];
-        $markers[$x][lng] = $row['fldykoor'];
+        $markers[$x][lng]  = $row['fldykoor'];
         $markers[$x][label] = '<a href="showdata.php?menu=playground&idwert='.$dbselarr[$x].'">'.$row['fldname'].'</a>';
-        $markers[$x][icontype] = 'green';
+        if ($row['fldspielplatzpaten']=='x') {
+          $markers[$x][icontype] = 'green';
+          if ($row['fldtischtennis']=='x') {
+            $markers[$x][icontype] = 'yellow';
+          }
+        } else {
+          $markers[$x][icontype] = 'red';
+          if ($row['fldtischtennis']=='x') {
+            $markers[$x][icontype] = 'blue';
+          }
+        }
      }	
 
 ?>
@@ -131,7 +141,7 @@ if (isset($_GET['tiles'])) {
         var marker = feature.createMarker();
         var markerClick = function (evt) {
                 if (this.popup == null) {
-                    this.popup = this.createPopup(this.closeBox);
+                    this.popup = this.createPopup(this.closeBox);        
                     map.addPopup(this.popup);
                     this.popup.show();
                 } else {
@@ -163,3 +173,9 @@ if (isset($_GET['tiles'])) {
     };
 </script>   
 <div id="map" style="width:<?php echo $options['width']; ?>; height: <?php echo $options['height']; ?>;"></div>
+<div>Legende:
+<img src="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/tools/osm/image/red.png" alt="red"> - ohne Spielplatzpaten
+<img src="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/tools/osm/image/green.png" alt="green"> - mit Spielplatzpaten
+<img src="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/tools/osm/image/blue.png" alt="blue"> - Tischtennis
+<img src="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/tools/osm/image/yellow.png" alt="yellow"> - Spielplatzpaten und Tischtennis
+</div>

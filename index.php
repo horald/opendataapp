@@ -1,3 +1,3 @@
 <?php
-echo "hallo";
+echo "<a href='app/androidapp'>Spielplatzapp</a>";
 ?>

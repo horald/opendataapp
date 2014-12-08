@@ -108,7 +108,11 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
      $count=sizeof($dbselarr);
      //echo $count."=count<br>";
      $query="SELECT * FROM ".$pararray['dbtable'];
+<<<<<<< HEAD
      echo $query."<br>";
+=======
+     //echo $query."<br>";
+>>>>>>> ed66af43bd554edbfcdc552f7149a6ae70380d87
      $qryres = db_query($query," SELECT-Error",$gdbtyp);
      $ds="";
      for ( $x = 0; $x < $count; $x++ ) {

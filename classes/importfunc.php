@@ -194,8 +194,12 @@ function importtxtfile($importarray,$datei,$importpfad,$gdbtyp) {
     $count=$count+1;
     $textline=trim($textline);
     //var_dump($textline);
+<<<<<<< HEAD
 //    $array = explode ( ',', $textline );
     $array = explode ( ';', $textline );
+=======
+    $array = explode ( ',', $textline );
+>>>>>>> ed66af43bd554edbfcdc552f7149a6ae70380d87
     //echo count($array)."=count<br>";
     $sqlins="";
     for ( $x = 0; $x < count ( $array ); $x++ )

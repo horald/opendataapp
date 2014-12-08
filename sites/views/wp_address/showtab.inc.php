@@ -74,6 +74,7 @@ $listarray = array ( array ( 'label' => '',
                              'width' => 200, 
                              'type' => 'text',
                              'dbfield' => 'fldbemerk' ),
+<<<<<<< HEAD
                      array ( 'label' => 'X-Koor',
                              'name' => 'xkoor', 
                              'width' => 50, 
@@ -86,6 +87,8 @@ $listarray = array ( array ( 'label' => '',
                              'fieldhide' => 'true', 
                              'type' => 'text',
                              'dbfield' => 'fldykoor' ),
+=======
+>>>>>>> ed66af43bd554edbfcdc552f7149a6ae70380d87
                      array ( 'label' => '&Oumlffnungszeiten',
                              'name' => 'oeffnungszeiten', 
                              'fieldhide' => 'true', 

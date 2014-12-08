@@ -7,8 +7,11 @@ You need also php and apache.
 at the first start it will install automatically. If the config file config.php does
 not exist the install routine will start. Only following the instructions.
 
+<<<<<<< HEAD
 the app use yii framework so you have to give some rights
 sudo chmod -R 775 xx
 sudo chmod -R 775 assets
 
  
+=======
+>>>>>>> ed66af43bd554edbfcdc552f7149a6ae70380d87

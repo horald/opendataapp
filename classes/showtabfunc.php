@@ -573,7 +573,10 @@ if (is_array($filterarray)) {
         $selectstatus=false;
 //        while ($fline = mysql_fetch_array($fresult)) {
         while ($fline = db_fetch($fresult,$gdbtyp)) {
+<<<<<<< HEAD
           //$strstatus = utf8_decode($fline[$arrelement['seldbfield']]);
+=======
+>>>>>>> ed66af43bd554edbfcdc552f7149a6ae70380d87
           $strstatus = $fline[$arrelement['seldbfield']];
           if ($strstatus<>'(ohne)') {
             if ($arrelement['value'] == $strstatus) {

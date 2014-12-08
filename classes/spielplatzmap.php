@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 session_start();
+=======
+>>>>>>> ed66af43bd554edbfcdc552f7149a6ae70380d87
 include("../config.php");
 include("dbtools.php");
 ?>
@@ -107,6 +110,7 @@ include("dbtools.php");
      </script>
      </head>
 <?php
+<<<<<<< HEAD
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
 //     $query = db_query("SELECT * FROM tblmarkers"," SELECT-Error","mysql");
@@ -121,6 +125,17 @@ include("dbtools.php");
          $idwert=$row['fldindex'];
          $ds=$ds.$row['fldxkoor'].",".$row['fldykoor'].",showdata.php?menu=playground&idwert=".$idwert.",".$name.";";
      }
+=======
+//     $query = mysql_query("SELECT * FROM tblmarkers");
+     $query = db_query("SELECT * FROM tblmarkers"," SELECT-Error");
+     $ds="";
+//     while ($row = mysql_fetch_array($query)){
+     while ($row = db_fetch($query)){
+     	  $name=$row['fldname'];
+     	  //$name = strtr($name, " ", "&nbsp;");
+        $ds=$ds.$row['fldlat'].",".$row['fldlng'].",showtab.php?menu=playground,".$name.";";
+     }	
+>>>>>>> ed66af43bd554edbfcdc552f7149a6ae70380d87
      $array=chr(34).$ds.chr(34);
      echo "<body onload='initMap(".$array.")' style='margin:0px; border:0px; padding:0px;'>";
      echo "<div id='map'></div>";

@@ -1,3 +1,3 @@
 <?php
-echo "<a href='https://github.com/horald/androidportal'>Spielplatzapp</a>";
+echo "<a href='http://horald.github.io/androidportal/'>Spielplatzapp</a>";
 ?>

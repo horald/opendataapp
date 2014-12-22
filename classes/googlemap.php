@@ -33,6 +33,49 @@ echo "googlemap";
      var currentPopup;
      var bounds = new google.maps.LatLngBounds();
 
+     function addMarker(lat, lng, info, complete) {
+             var pt = new google.maps.LatLng(lat, lng);
+             bounds.extend(pt);
+             var marker = null;
+             if( complete == 0 ){
+                    marker = new google.maps.Marker({
+                             position: pt,
+                             icon: blue_icon,
+                             map: map
+                     });
+            } else {
+                    marker = new google.maps.Marker({
+                             position: pt,
+                             icon: red_icon,
+                             map: map
+                     });
+            }
+            var popup = new google.maps.InfoWindow({
+                     content: info,
+                     maxWidth: 300
+            });
+            google.maps.event.addListener(marker, "click", function() {
+                     if (currentPopup != null) {
+                             currentPopup.close();
+                             currentPopup = null;
+                     }
+                     popup.open(map, marker);
+                     currentPopup = popup;
+            });
+
+            google.maps.event.addListener(popup, "click", function() {
+              popup.close();            
+            });
+           
+     }
+
+     function initMap(parameterliste) {
+       var i = 0;     	
+
+       meinDS = parameterliste.split(";");
+
+     }
+
      </script>
 <?php
      echo "</head>";

@@ -17,7 +17,10 @@ echo "googlemap";
      body { font: normal 10pt Helvetica, Arial; }
      #map { width: 640px; height: 480px; border: 0px; padding: 0px; }
      </style>
+     <script src="http://maps.google.com/maps/api/js?v=3&sensor=false" type="text/javascript"></script>
+     <script type="text/javascript">
 
+     </script>
 <?php
      echo "</head>";
      $dbselarr = $_SESSION['DBSELARR'];

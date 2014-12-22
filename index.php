@@ -1,9 +1,4 @@
 <?php
-echo "<a href='http://horald.github.io/androidportal/'>Spielplatzapp</a><br>";
-echo "<a href='start.php'>Opendataapp</a><br>";
-
-
-
 echo "<html>";
 echo "  <head>";
 echo "    <meta charset='utf-8'>";

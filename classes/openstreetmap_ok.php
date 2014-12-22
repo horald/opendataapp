@@ -21,7 +21,7 @@ include("../sites/views/wp_".$menu."/showtab.inc.php");
  Link: http://www.vorlagen.uni-erlangen.de/vorlagen/karten.shtml
  */
 //echo "<legende>osm-karte</legende>"; 
-//echo $_SERVER["DOCUMENT_ROOT"]."=root<br>";
+echo $_SERVER["DOCUMENT_ROOT"]."=root<br>";
 //echo $_SERVER["HTTP_HOST"]."=http_host<br>";
 // defaults
 $defaults = array(
@@ -42,6 +42,7 @@ $defaults = array(
     'tileurl' => 'http://osm.rrze.fau.de/osmde/${z}/${x}/${y}.png'
 );
 
+echo "osm1";
 // load options
 $fpath = 'options.conf';
 $fpath_alternative = $_SERVER["DOCUMENT_ROOT"].'/vkdaten/osm-karte.conf';
@@ -59,6 +60,7 @@ while(!feof($fh)) {
 }
 fclose($fh);
 
+echo "osm2";
 // merge defaults with options
 $options = array_merge($defaults, $options);
 
@@ -73,6 +75,7 @@ if(isset($_SERVER['PATH_INFO'])){
 	if(!empty($pathinfo[6])){ $options['zoom'] = filter_var($pathinfo[6], FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[0-9]{1,2}$/")));  }
 }
 
+echo "osm3";
 // load get variables
 if(!empty($_GET['xml'])){ $options['xml'] = filter_var($_GET['xml'], FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-z]*$/")));  }
 if(!empty($_GET['width'])){ $options['width'] = filter_var($_GET['width'], FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[0-9px\%]{2,7}$/")));  }
@@ -92,6 +95,7 @@ if (isset($_GET['tiles'])) {
   if ($_GET['tiles'] == "osmorg") { $options['tileurl'] = 'http://tile.openstreetmap.org/${z}/${x}/${y}.png'; }
 }
 
+echo "osm4";
 
      $dbselarr = $_SESSION['DBSELARR'];
      $count=sizeof($dbselarr);
@@ -124,6 +128,7 @@ if (isset($_GET['tiles'])) {
         }
      }	
 
+echo "osm5";
 ?>
 
 <script type="text/javascript" src="http://osm.rrze.uni-erlangen.de/OpenLayers.js"></script>

@@ -11,6 +11,12 @@ echo "googlemap";
      echo "<head>";
 
 ?>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+     <title>Google Map</title>
+     <style type="text/css">
+     body { font: normal 10pt Helvetica, Arial; }
+     #map { width: 640px; height: 480px; border: 0px; padding: 0px; }
+     </style>
 
 <?php
      echo "</head>";
@@ -22,7 +28,6 @@ echo "googlemap";
      $qryres = db_query($query," SELECT-Error",$gdbtyp);
      $ds="";
      for ( $x = 0; $x < $count; $x++ ) {
-//     while ($row = db_fetch($qryres,$gdbtyp)){
         $arrquery="SELECT * FROM ".$pararray['dbtable']." WHERE fldindex=".$dbselarr[$x];
         //echo $arrquery."<br>";
         $qryarr = db_query($arrquery," SELECT-Error",$gdbtyp);

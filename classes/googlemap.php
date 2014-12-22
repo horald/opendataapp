@@ -20,6 +20,19 @@ echo "googlemap";
      <script src="http://maps.google.com/maps/api/js?v=3&sensor=false" type="text/javascript"></script>
      <script type="text/javascript">
 
+     var blue_icon = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png",
+             new google.maps.Size(32, 32), new google.maps.Point(0, 0),
+             new google.maps.Point(16, 32)
+     );
+     var red_icon = new google.maps.MarkerImage("http://labs.google.com/ridefinder/images/mm_20_red.png",
+             new google.maps.Size(32, 32), new google.maps.Point(0, 0),
+             new google.maps.Point(16, 32)
+     );
+     var center = null;
+     var map = null;
+     var currentPopup;
+     var bounds = new google.maps.LatLngBounds();
+
      </script>
 <?php
      echo "</head>";

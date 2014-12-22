@@ -11,7 +11,7 @@ echo "    <link href='includes/bootstrap/css/bootstrap.min.css' rel='stylesheet'
 echo "  </head>";
 echo "  <body>";
 
-echo "  <a href='http://horald.github.io/androidportal/' class='btn btn-default btn-lg btn-block' role='button'>Spielplatzapp</a><br>";
+echo "  <a href='http://horald.github.io/meinspielplatz/' class='btn btn-default btn-lg btn-block' role='button'>Spielplatzapp</a><br>";
 echo "  <a href='start.php' class='btn btn-default btn-lg btn-block' role='button'>OpendataApp (in Bearbeitung)</a><br>";
 
 echo "  </body>";

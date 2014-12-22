@@ -1,17 +1,10 @@
-*** Opendataapp ***
+<pre>
+<h4>OpendataApp</h4>
+Dies ist eine georeferenzierte Auflistung der Schulen in Köln.
+Die Daten werden als Liste angezeigt oder auf einer Openstreetmap.
+Diese Liste kann nach Schultyp, Schulart und Stadtbezirken gefiltert werden.
+Die Liste wird mit php und postgres angezeigt. Dies ist sehr flexible und gibt die Möglichkeit
+auch andere Daten zu visualisieren. Zur Zeit müssen die Daten erst in der Liste gefiltert werden,
+damit die gefilterte Auswahl dann auf der Map angezeigt wird.
 
-this is a webapp for all datas importing and showing with mysql or postgreSQL.
-You need also php and apache.
-
---- Installation ---
-at the first start it will install automatically. If the config file config.php does
-not exist the install routine will start. Only following the instructions.
-
-<<<<<<< HEAD
-the app use yii framework so you have to give some rights
-sudo chmod -R 775 xx
-sudo chmod -R 775 assets
-
- 
-=======
->>>>>>> ed66af43bd554edbfcdc552f7149a6ae70380d87
+</pre>
